@@ -225,6 +225,11 @@
             margin-top: 3rem;
             flex-wrap: wrap;
         }
+        
+        /* Hide mobile order button on desktop */
+        .mobile-order-button {
+            display: none;
+        }
 
         .btn-secondary {
             background: transparent;
@@ -916,7 +921,29 @@
                 font-size: clamp(2rem, 10vw, 3rem);
                 text-align: center;
                 line-height: 1.2;
-                margin-bottom: 1.5rem;
+                margin-bottom: 2rem;
+            }
+            
+            /* Mobile order button right after title */
+            .mobile-order-button {
+                display: block;
+                margin: 0 auto 2rem auto;
+                width: 100%;
+                max-width: 280px;
+            }
+            
+            /* Hide desktop buttons on mobile, show only learn process */
+            .hero-buttons {
+                justify-content: center;
+                margin-bottom: 3rem;
+            }
+            
+            .hero-buttons .btn-secondary {
+                width: 100%;
+                max-width: 280px;
+                text-align: center;
+                padding: 1rem 2rem;
+                margin-bottom: 2rem;
             }
             
             /* Mobile-specific hero container */
@@ -951,6 +978,7 @@
                 flex-direction: column;
                 align-items: center;
                 gap: 1rem;
+                margin-bottom: 3rem;
             }
             
             .cta-button,
@@ -959,6 +987,11 @@
                 max-width: 280px;
                 text-align: center;
                 padding: 1rem 2rem;
+            }
+            
+            /* Extra padding after learn process button */
+            .btn-secondary {
+                margin-bottom: 2rem;
             }
             
             /* Mobile-specific image styling */
@@ -1072,6 +1105,9 @@
             <div class="hero-content">
                 <h1 class="hero-title typewriter" id="typewriter-text"></h1>
                 
+                <!-- Mobile order button (only visible on mobile) -->
+                <a href="#order" class="cta-button mobile-order-button">order culture</a>
+                
                 <div style="width: 100px; height: 2px; background: var(--soft-blue); margin: 2rem 0; border-radius: 2px;"></div>
                 
                 <p class="hero-subtitle">eco-packaged • no microplastics • vegan friendly</p>
@@ -1083,7 +1119,6 @@
                 </div>
                 
                 <div class="hero-buttons">
-                    <a href="#order" class="cta-button">order culture</a>
                     <a href="#process" class="btn-secondary">learn process</a>
                 </div>
             </div>
