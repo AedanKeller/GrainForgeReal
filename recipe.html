@@ -375,7 +375,7 @@
             transform: translateY(-2px);
         }
 
-        /* Recipe Detail Modal */
+        /* Recipe Detail Modal - Enhanced for mobile blur */
         .recipe-modal {
             display: none;
             position: fixed;
@@ -383,11 +383,40 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.8);
-            backdrop-filter: blur(8px);
             z-index: 2000;
             padding: 2rem;
             overflow-y: auto;
+        }
+
+        /* Enhanced background blur with multiple layers for better mobile support */
+        .recipe-modal::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: -1;
+        }
+
+        .recipe-modal::after {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            z-index: -1;
+        }
+
+        /* Fallback blur for browsers that don't support backdrop-filter */
+        .recipe-modal.no-backdrop-filter::after {
+            background: rgba(0, 0, 0, 0.3);
+            backdrop-filter: none;
+            -webkit-backdrop-filter: none;
         }
 
         .modal-content {
@@ -398,6 +427,7 @@
             overflow: hidden;
             position: relative;
             animation: fadeInUp 0.3s ease-out;
+            z-index: 1;
         }
 
         .modal-close {
@@ -534,6 +564,14 @@
             line-height: 1.6;
         }
 
+        /* Blur the main content when modal is open */
+        body.modal-open .navbar,
+        body.modal-open .recipes-section {
+            filter: blur(4px);
+            -webkit-filter: blur(4px);
+            transition: filter 0.3s ease;
+        }
+
         /* Animations */
         @keyframes fadeInUp {
             from {
@@ -623,6 +661,12 @@
             .modal-title {
                 font-size: 1.5rem;
             }
+
+            /* Enhanced mobile blur effects */
+            .recipe-modal::after {
+                backdrop-filter: blur(8px);
+                -webkit-backdrop-filter: blur(8px);
+            }
         }
 
         @media (max-width: 480px) {
@@ -637,6 +681,11 @@
             
             .recipe-card {
                 min-height: auto;
+            }
+
+            /* Stronger background for very small screens */
+            .recipe-modal::before {
+                background: rgba(0, 0, 0, 0.9);
             }
         }
     </style>
@@ -1107,6 +1156,11 @@
     </div>
 
     <script>
+        // Check for backdrop-filter support
+        function supportsBackdropFilter() {
+            return CSS.supports('backdrop-filter', 'blur(1px)') || CSS.supports('-webkit-backdrop-filter', 'blur(1px)');
+        }
+
         // Mobile menu functionality
         const mobileToggle = document.getElementById('mobile-toggle');
         const navRight = document.getElementById('nav-right');
@@ -1154,12 +1208,23 @@
             });
         });
 
-        // Recipe modal functionality
+        // Enhanced recipe modal functionality with improved mobile blur
         function openRecipe(recipeId) {
             const modal = document.getElementById(`modal-${recipeId}`);
             if (modal) {
+                // Add backdrop-filter support check
+                if (!supportsBackdropFilter()) {
+                    modal.classList.add('no-backdrop-filter');
+                }
+                
                 modal.style.display = 'block';
                 document.body.style.overflow = 'hidden';
+                document.body.classList.add('modal-open');
+                
+                // Force a repaint to ensure blur effect applies
+                setTimeout(() => {
+                    modal.style.opacity = '1';
+                }, 10);
             }
         }
 
@@ -1167,8 +1232,11 @@
             const modals = document.querySelectorAll('.recipe-modal');
             modals.forEach(modal => {
                 modal.style.display = 'none';
+                modal.style.opacity = '';
+                modal.classList.remove('no-backdrop-filter');
             });
             document.body.style.overflow = 'auto';
+            document.body.classList.remove('modal-open');
         }
 
         // Close modal when clicking outside
@@ -1198,6 +1266,27 @@
                 });
             }
         });
+
+        // Prevent scrolling on touch devices when modal is open
+        let touchStartY = 0;
+        document.addEventListener('touchstart', function(e) {
+            if (document.body.classList.contains('modal-open')) {
+                touchStartY = e.touches[0].clientY;
+            }
+        }, { passive: false });
+
+        document.addEventListener('touchmove', function(e) {
+            if (document.body.classList.contains('modal-open')) {
+                const touchY = e.touches[0].clientY;
+                const touchDiff = touchStartY - touchY;
+                
+                // Check if we're trying to scroll the modal content or the background
+                const modalContent = e.target.closest('.modal-content');
+                if (!modalContent) {
+                    e.preventDefault();
+                }
+            }
+        }, { passive: false });
     </script>
 </body>
 </html>
