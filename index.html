@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Grain Smith - Plastic-Free Sourdough Culture</title>
+    <title>Flour Department - Plastic-Free Sourdough Products</title>
     
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -114,27 +114,6 @@
             color: var(--primary-black);
         }
 
-        .cta-button {
-            background: var(--soft-blue);
-            color: var(--primary-black);
-            padding: 0.75rem 2rem;
-            border: none;
-            font-weight: 300;
-            text-transform: lowercase;
-            letter-spacing: 0.05em;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            text-decoration: none;
-            display: inline-block;
-            font-size: 0.85rem;
-            border-radius: 25px;
-        }
-
-        .cta-button:hover {
-            background: var(--pastel-blue);
-            transform: translateY(-2px);
-        }
-
         /* Mobile menu */
         .mobile-menu-toggle {
             display: none;
@@ -154,7 +133,7 @@
 
         /* Hero Section */
         .hero {
-            min-height: 100vh;
+            min-height: 60vh;
             display: flex;
             align-items: center;
             position: relative;
@@ -166,10 +145,7 @@
             max-width: 1400px;
             margin: 0 auto;
             padding: 0 2rem;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: center;
+            text-align: center;
         }
 
         .hero-content {
@@ -182,577 +158,179 @@
             font-weight: 300;
             line-height: 1.1;
             color: var(--primary-black);
-            margin-bottom: 2rem;
+            margin-bottom: 1rem;
             letter-spacing: -0.02em;
-            min-height: clamp(150px, 20vw, 200px);
         }
 
         .hero-subtitle {
-            font-size: clamp(0.9rem, 2vw, 1rem);
+            font-size: clamp(0.9rem, 2vw, 1.1rem);
             color: var(--text-gray);
             margin-bottom: 2rem;
             font-weight: 300;
             line-height: 1.7;
-            max-width: 500px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
-        .hero-features {
+        /* Product Categories */
+        .categories {
+            padding: clamp(4rem, 10vw, 6rem) 0;
+            background: var(--pure-white);
+        }
+
+        .categories-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .category-nav {
             display: flex;
-            flex-direction: column;
-            gap: 1rem;
-            margin: 2rem 0;
-            border-left: 2px solid var(--warm-brown);
-            padding-left: 1.5rem;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 4rem;
         }
 
-        .feature-item {
-            font-size: clamp(0.8rem, 2vw, 0.9rem);
-            color: var(--text-gray);
-            font-weight: 300;
-            text-transform: lowercase;
-            letter-spacing: 0.02em;
-            opacity: 0;
-            animation: fadeInUp 0.8s ease-out forwards;
-        }
-
-        .feature-item:nth-child(1) { animation-delay: 0.5s; }
-        .feature-item:nth-child(2) { animation-delay: 0.7s; }
-        .feature-item:nth-child(3) { animation-delay: 0.9s; }
-
-        .hero-buttons {
-            display: flex;
-            gap: 1rem;
-            margin-top: 3rem;
-            flex-wrap: wrap;
-        }
-        
-        /* Hide mobile order button on desktop */
-        .mobile-order-button {
-            display: none;
-        }
-
-        .btn-secondary {
-            background: transparent;
-            color: var(--primary-black);
-            border: 1px solid var(--warm-brown);
+        .category-button {
             padding: 0.75rem 2rem;
+            border: 2px solid var(--warm-brown);
+            background: transparent;
+            color: var(--text-gray);
+            font-family: inherit;
             font-weight: 300;
             text-transform: lowercase;
             letter-spacing: 0.05em;
             cursor: pointer;
             transition: all 0.3s ease;
-            text-decoration: none;
-            display: inline-block;
-            font-size: 0.85rem;
             border-radius: 25px;
+            font-size: 0.9rem;
         }
 
-        .btn-secondary:hover {
-            background: var(--warm-brown);
-            color: var(--primary-black);
-            transform: translateY(-2px);
-        }
-
-        .hero-image {
-            position: relative;
-            opacity: 0;
-            animation: fadeInUp 1s ease-out 0.5s forwards;
-        }
-
-        .hero-image img {
-            width: 100%;
-            height: clamp(400px, 50vw, 600px);
-            object-fit: cover;
-            filter: sepia(20%) saturate(80%);
-            transition: filter 0.6s ease;
-            border-radius: 20px;
-        }
-
-        .hero-image:hover img {
-            filter: sepia(10%) saturate(100%);
-        }
-
-        /* Stats Section */
-        .stats-section {
-            padding: clamp(6rem, 15vw, 10rem) 0;
-            background: var(--pure-white);
-        }
-
-        .stats-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
-        }
-
-        .stats-title {
-            font-size: clamp(2rem, 6vw, 2.5rem);
-            text-align: center;
-            margin-bottom: clamp(3rem, 8vw, 6rem);
-            font-weight: 300;
-            letter-spacing: -0.01em;
-            opacity: 0;
-            animation: fadeInUp 0.8s ease-out 0.3s forwards;
-        }
-
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-        }
-
-        .stat-card {
-            text-align: center;
-            padding: 2.5rem 1.5rem;
-            background: var(--light-brown);
-            border: 1px solid var(--warm-brown);
-            transition: transform 0.3s ease;
-            opacity: 0;
-            animation: fadeInUp 0.8s ease-out forwards;
-            border-radius: 15px;
-        }
-
-        .stat-card:nth-child(1) { animation-delay: 0.4s; }
-        .stat-card:nth-child(2) { animation-delay: 0.6s; }
-        .stat-card:nth-child(3) { animation-delay: 0.8s; }
-
-        .stat-card:hover {
-            transform: translateY(-5px);
-            background: var(--pastel-blue);
-        }
-
-        .stat-number {
-            font-size: clamp(2.5rem, 8vw, 4rem);
-            font-weight: 300;
-            display: block;
-            margin-bottom: 1rem;
-            color: var(--primary-black);
-            font-family: 'JetBrains Mono', monospace;
-        }
-
-        .stat-label {
-            font-size: clamp(0.7rem, 2vw, 0.8rem);
-            text-transform: lowercase;
-            letter-spacing: 0.05em;
-            color: var(--text-gray);
-            margin-bottom: 1rem;
-        }
-
-        .stat-description {
-            font-size: clamp(0.8rem, 2vw, 0.9rem);
-            color: var(--text-gray);
-            line-height: 1.5;
-            font-weight: 300;
-        }
-
-        /* Process Section */
-        .process-section {
-            padding: clamp(6rem, 15vw, 10rem) 0;
-            background: var(--light-brown);
-        }
-
-        .process-container {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 0 2rem;
-        }
-
-        .section-title {
-            font-size: clamp(2rem, 6vw, 2.5rem);
-            text-align: center;
-            color: var(--primary-black);
-            margin-bottom: clamp(3rem, 8vw, 6rem);
-            font-weight: 300;
-            letter-spacing: -0.01em;
-        }
-
-        .process-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 3rem;
-        }
-
-        .process-step {
-            text-align: center;
-            opacity: 0;
-            animation: fadeInUp 0.8s ease-out forwards;
-        }
-
-        .process-step:nth-child(1) { animation-delay: 0.2s; }
-        .process-step:nth-child(2) { animation-delay: 0.4s; }
-        .process-step:nth-child(3) { animation-delay: 0.6s; }
-
-        .process-number {
-            font-family: 'JetBrains Mono', monospace;
-            font-size: clamp(0.9rem, 2vw, 1rem);
-            font-weight: 300;
-            color: var(--text-gray);
-            margin-bottom: 1.5rem;
-            letter-spacing: 0.1em;
-        }
-
-        .process-title {
-            font-size: clamp(1.2rem, 3vw, 1.5rem);
-            margin-bottom: 1.5rem;
-            color: var(--primary-black);
-            font-weight: 400;
-        }
-
-        .process-description {
-            color: var(--text-gray);
-            line-height: 1.6;
-            font-size: clamp(0.9rem, 2vw, 0.95rem);
-            font-weight: 300;
-        }
-
-        /* Gallery Section */
-        .gallery-section {
-            padding: clamp(6rem, 15vw, 10rem) 0;
-            background: var(--pure-white);
-        }
-
-        .gallery-container {
-            max-width: 1600px;
-            margin: 0 auto;
-            padding: 0 2rem;
-        }
-
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 1.5rem;
-            margin-top: clamp(3rem, 8vw, 6rem);
-        }
-
-        .gallery-item {
-            position: relative;
-            overflow: hidden;
-            height: clamp(300px, 40vw, 400px);
-            cursor: pointer;
-            transition: transform 0.3s ease;
-            border-radius: 15px;
-        }
-
-        .gallery-item:hover {
-            transform: scale(1.02);
-        }
-
-        .gallery-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            filter: sepia(20%) saturate(80%);
-            transition: filter 0.6s ease;
-        }
-
-        .gallery-item:hover img {
-            filter: sepia(10%) saturate(100%);
-        }
-
-        .gallery-overlay {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
-            color: white;
-            padding: 2rem 1.5rem 1.5rem;
-            transform: translateY(20px);
-            opacity: 0;
-            transition: all 0.3s ease;
-        }
-
-        .gallery-item:hover .gallery-overlay {
-            transform: translateY(0);
-            opacity: 1;
-        }
-
-        .gallery-title {
-            font-size: clamp(1rem, 3vw, 1.2rem);
-            margin-bottom: 0.5rem;
-            font-weight: 400;
-        }
-
-        .gallery-description {
-            font-size: clamp(0.8rem, 2vw, 0.85rem);
-            opacity: 0.9;
-            line-height: 1.5;
-            font-weight: 300;
-        }
-
-        /* Image Grid Section */
-        .image-grid-section {
-            padding: clamp(3rem, 8vw, 6rem) 0;
-            background: var(--pastel-blue);
-        }
-
-        .image-grid {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 0 2rem;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1rem;
-        }
-
-        .image-grid-item {
-            height: clamp(200px, 30vw, 250px);
-            border-radius: 10px;
-            overflow: hidden;
-            transition: transform 0.3s ease;
-        }
-
-        .image-grid-item:hover {
-            transform: scale(1.05);
-        }
-
-        .image-grid-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            filter: sepia(15%) saturate(85%);
-        }
-
-        /* About Section */
-        .about-section {
-            padding: clamp(6rem, 15vw, 10rem) 0;
-            background: var(--light-brown);
-        }
-
-        .about-container {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 0 2rem;
-        }
-
-        .about-content {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 4rem;
-            align-items: center;
-        }
-
-        .about-text {
-            opacity: 0;
-            animation: fadeInUp 0.8s ease-out 0.3s forwards;
-        }
-
-        .about-description {
-            font-size: clamp(0.95rem, 2.5vw, 1rem);
-            color: var(--text-gray);
-            line-height: 1.7;
-            margin-bottom: 2rem;
-            font-weight: 300;
-        }
-
-        .commitment-grid {
-            display: grid;
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .commitment-item {
-            border-left: 2px solid var(--warm-brown);
-            padding-left: 1.5rem;
-            opacity: 0;
-            animation: fadeInUp 0.8s ease-out forwards;
-        }
-
-        .commitment-item:nth-child(1) { animation-delay: 0.5s; }
-        .commitment-item:nth-child(2) { animation-delay: 0.7s; }
-        .commitment-item:nth-child(3) { animation-delay: 0.9s; }
-
-        .commitment-item h4 {
-            font-size: clamp(0.95rem, 2.5vw, 1rem);
-            margin-bottom: 0.5rem;
-            font-weight: 400;
-            text-transform: lowercase;
-            letter-spacing: 0.02em;
-        }
-
-        .commitment-item p {
-            font-size: clamp(0.85rem, 2vw, 0.9rem);
-            color: var(--text-gray);
-            font-weight: 300;
-        }
-
-        .about-image {
-            opacity: 0;
-            animation: fadeInUp 0.8s ease-out 0.5s forwards;
-        }
-
-        .about-image img {
-            width: 100%;
-            height: clamp(400px, 50vw, 500px);
-            object-fit: cover;
-            filter: sepia(20%) saturate(80%);
-            transition: filter 0.6s ease;
-            border-radius: 20px;
-        }
-
-        .about-image:hover img {
-            filter: sepia(10%) saturate(100%);
-        }
-
-        /* CTA Section */
-        .cta-section {
-            padding: clamp(6rem, 15vw, 10rem) 0;
-            background: var(--primary-black);
-            color: white;
-            text-align: center;
-        }
-
-        .cta-container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 0 2rem;
-        }
-
-        .cta-title {
-            font-size: clamp(2.5rem, 8vw, 3rem);
-            margin-bottom: 2rem;
-            font-weight: 300;
-            letter-spacing: -0.01em;
-            opacity: 0;
-            animation: fadeInUp 0.8s ease-out 0.3s forwards;
-        }
-
-        .cta-subtitle {
-            font-size: clamp(1rem, 3vw, 1.1rem);
-            margin-bottom: 3rem;
-            opacity: 0.8;
-            line-height: 1.6;
-            font-weight: 300;
-            opacity: 0;
-            animation: fadeInUp 0.8s ease-out 0.5s forwards;
-        }
-
-        .cta-button-large {
+        .category-button.active,
+        .category-button:hover {
             background: var(--soft-blue);
             color: var(--primary-black);
-            padding: 1rem 3rem;
-            border: none;
-            font-weight: 300;
-            font-size: clamp(0.85rem, 2vw, 0.9rem);
-            text-transform: lowercase;
-            letter-spacing: 0.05em;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            text-decoration: none;
-            display: inline-block;
-            opacity: 0;
-            animation: fadeInUp 0.8s ease-out 0.7s forwards;
-            border-radius: 30px;
-        }
-
-        .cta-button-large:hover {
-            background: var(--pastel-blue);
-            transform: translateY(-2px);
-        }
-
-        /* Order Section */
-        .order-section {
-            padding: clamp(4rem, 12vw, 8rem) 0;
-            background: var(--pure-white);
-        }
-
-        .order-card {
-            background: var(--light-brown);
-            padding: clamp(2rem, 6vw, 4rem);
-            border: 1px solid var(--warm-brown);
-            margin: 3rem auto;
-            max-width: 800px;
-            border-radius: 20px;
+            border-color: var(--soft-blue);
         }
 
         .product-grid {
             display: grid;
-            grid-template-columns: 1fr;
-            gap: 2rem;
-            align-items: center;
-            margin-bottom: 3rem;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 3rem;
+            margin-top: 3rem;
         }
 
-        .product-info h3 {
-            font-size: clamp(1.2rem, 4vw, 1.5rem);
-            margin-bottom: 1rem;
+        .product-card {
+            background: var(--light-brown);
+            border: 1px solid var(--warm-brown);
+            border-radius: 20px;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            opacity: 0;
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+
+        .product-card:nth-child(1) { animation-delay: 0.2s; }
+        .product-card:nth-child(2) { animation-delay: 0.4s; }
+        .product-card:nth-child(3) { animation-delay: 0.6s; }
+        .product-card:nth-child(4) { animation-delay: 0.8s; }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+        }
+
+        .product-image {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            filter: sepia(20%) saturate(80%);
+            transition: filter 0.6s ease;
+        }
+
+        .product-card:hover .product-image {
+            filter: sepia(10%) saturate(100%);
+        }
+
+        .product-info {
+            padding: 2rem;
+        }
+
+        .product-title {
+            font-size: 1.3rem;
             font-weight: 400;
+            margin-bottom: 0.5rem;
             text-transform: lowercase;
             letter-spacing: 0.02em;
         }
 
-        .product-info .price {
-            font-family: 'JetBrains Mono', monospace;
-            font-size: clamp(1.5rem, 5vw, 2rem);
+        .product-description {
+            color: var(--text-gray);
+            font-size: 0.9rem;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
             font-weight: 300;
-            margin: 1rem 0;
-            color: var(--primary-black);
         }
 
         .product-features {
-            font-size: clamp(0.85rem, 2vw, 0.9rem);
+            margin-bottom: 2rem;
+        }
+
+        .feature-item {
+            font-size: 0.85rem;
             color: var(--text-gray);
-            line-height: 1.6;
+            margin-bottom: 0.5rem;
+            padding-left: 1rem;
+            position: relative;
         }
 
-        .order-form {
-            display: grid;
-            gap: 1.5rem;
+        .feature-item:before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: var(--warm-brown);
         }
 
-        .form-row {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 1rem;
-        }
-
-        .order-form input,
-        .order-form textarea {
-            padding: 1rem;
-            border: 1px solid var(--warm-brown);
-            background: var(--pure-white);
-            font-family: inherit;
+        .product-price {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 1.5rem;
             font-weight: 300;
-            font-size: clamp(0.85rem, 2vw, 0.9rem);
-            border-radius: 8px;
-            width: 100%;
+            color: var(--primary-black);
+            margin-bottom: 1.5rem;
         }
 
-        .order-form input:focus,
-        .order-form textarea:focus {
-            outline: none;
-            border-color: var(--soft-blue);
-        }
-
-        .checkbox-row {
-            display: flex;
-            align-items: flex-start;
-            gap: 1rem;
-            padding: 1.5rem;
-            background: var(--pastel-blue);
-            border: 1px solid var(--warm-brown);
-            border-radius: 10px;
-        }
-
-        .checkbox-row label {
-            font-size: clamp(0.85rem, 2vw, 0.9rem);
-            color: var(--text-gray);
+        .buy-button {
+            background: var(--soft-blue);
+            color: var(--primary-black);
+            padding: 1rem 2rem;
+            border: none;
             font-weight: 300;
-            line-height: 1.4;
-        }
-
-        .trust-indicators {
-            display: flex;
-            justify-content: center;
-            gap: 1.5rem;
-            margin-top: 2rem;
-            padding-top: 2rem;
-            border-top: 1px solid var(--warm-brown);
-            font-size: clamp(0.75rem, 2vw, 0.85rem);
-            color: var(--text-gray);
             text-transform: lowercase;
-            letter-spacing: 0.02em;
-            flex-wrap: wrap;
+            letter-spacing: 0.05em;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 0.9rem;
+            border-radius: 25px;
+            width: 100%;
             text-align: center;
+            font-family: inherit;
+        }
+
+        .buy-button:hover {
+            background: var(--pastel-blue);
+            transform: translateY(-2px);
+        }
+
+        /* Category Sections */
+        .category-section {
+            display: none;
+        }
+
+        .category-section.active {
+            display: block;
         }
 
         /* Footer */
@@ -766,13 +344,6 @@
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 2rem;
-        }
-
-        .footer-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 3rem;
-            margin-bottom: 2rem;
             text-align: center;
         }
 
@@ -789,39 +360,10 @@
             line-height: 1.6;
             font-weight: 300;
             font-size: clamp(0.85rem, 2vw, 0.9rem);
-        }
-
-        .footer-title {
-            font-size: clamp(0.95rem, 2.5vw, 1rem);
-            margin-bottom: 1.5rem;
-            font-weight: 400;
-            text-transform: lowercase;
-            letter-spacing: 0.02em;
-        }
-
-        .footer-links {
-            list-style: none;
-        }
-
-        .footer-links li {
-            margin-bottom: 0.75rem;
-        }
-
-        .footer-links a {
-            color: white;
-            text-decoration: none;
-            opacity: 0.7;
-            transition: opacity 0.3s ease;
-            font-weight: 300;
-            font-size: clamp(0.85rem, 2vw, 0.9rem);
-        }
-
-        .footer-links a:hover {
-            opacity: 1;
+            margin-bottom: 2rem;
         }
 
         .footer-bottom {
-            text-align: center;
             padding-top: 2rem;
             border-top: 1px solid rgba(255, 255, 255, 0.1);
             opacity: 0.5;
@@ -856,34 +398,9 @@
                 padding: 2rem 3rem;
             }
             
-            .hero-container {
-                grid-template-columns: 1fr 1fr;
-                gap: 6rem;
+            .hero-container,
+            .categories-container {
                 padding: 0 3rem;
-            }
-            
-            .about-content {
-                grid-template-columns: 1fr 1fr;
-                gap: 6rem;
-            }
-            
-            .product-grid {
-                grid-template-columns: 1fr 2fr;
-                gap: 3rem;
-            }
-            
-            .form-row {
-                grid-template-columns: 1fr 1fr;
-            }
-            
-            .footer-grid {
-                grid-template-columns: 2fr 1fr 1fr;
-                text-align: left;
-                gap: 4rem;
-            }
-            
-            .trust-indicators {
-                gap: 3rem;
             }
         }
 
@@ -913,121 +430,23 @@
             
             .hero {
                 padding-top: 120px;
-                min-height: 100vh;
+                min-height: 50vh;
             }
             
-            /* Mobile-specific hero title styling */
-            .hero-title {
-                font-size: clamp(2rem, 10vw, 3rem);
-                text-align: center;
-                line-height: 1.2;
-                margin-bottom: 2rem;
-            }
-            
-            /* Mobile order button right after title */
-            .mobile-order-button {
-                display: block;
-                margin: 0 auto 2rem auto;
-                width: 100%;
-                max-width: 280px;
-            }
-            
-            /* Hide desktop buttons on mobile, show only learn process */
-            .hero-buttons {
-                justify-content: center;
-                margin-bottom: 3rem;
-            }
-            
-            .hero-buttons .btn-secondary {
-                width: 100%;
-                max-width: 280px;
-                text-align: center;
-                padding: 1rem 2rem;
-                margin-bottom: 2rem;
-            }
-            
-            /* Mobile-specific hero container */
-            .hero-container {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-                text-align: center;
-                padding: 0 1.5rem;
-            }
-            
-            /* Mobile-specific hero subtitle */
-            .hero-subtitle {
-                text-align: center;
-                margin-bottom: 1.5rem;
-                font-size: 0.9rem;
-            }
-            
-            /* Mobile-specific feature styling */
-            .hero-features {
-                border-left: none;
-                border-top: 2px solid var(--warm-brown);
-                padding-left: 0;
-                padding-top: 1.5rem;
-                margin: 2rem auto;
-                max-width: 300px;
-                text-align: center;
-            }
-            
-            /* Mobile-specific button styling */
-            .hero-buttons {
-                justify-content: center;
+            .category-nav {
                 flex-direction: column;
                 align-items: center;
                 gap: 1rem;
-                margin-bottom: 3rem;
             }
             
-            .cta-button,
-            .btn-secondary {
-                width: 100%;
-                max-width: 280px;
+            .category-button {
+                width: 200px;
                 text-align: center;
-                padding: 1rem 2rem;
             }
             
-            /* Extra padding after learn process button */
-            .btn-secondary {
-                margin-bottom: 2rem;
-            }
-            
-            /* Mobile-specific image styling */
-            .hero-image {
-                order: -1; /* Put image before text on mobile */
-                margin-bottom: 2rem;
-            }
-            
-            .hero-image img {
-                height: 300px;
-                border-radius: 15px;
-            }
-            
-            /* Mobile-specific section spacing */
-            .stats-section,
-            .process-section,
-            .gallery-section,
-            .about-section,
-            .cta-section {
-                padding: 4rem 0;
-            }
-            
-            /* Mobile-specific stats layout */
-            .stats-grid {
+            .product-grid {
                 grid-template-columns: 1fr;
-                gap: 1.5rem;
-            }
-            
-            /* Mobile-specific gallery adjustments */
-            .gallery-grid {
-                grid-template-columns: 1fr;
-                gap: 1rem;
-            }
-            
-            .gallery-item {
-                height: 250px;
+                gap: 2rem;
             }
         }
 
@@ -1037,41 +456,9 @@
             }
             
             .hero-container,
-            .process-container,
-            .gallery-container,
-            .about-container,
-            .stats-container,
-            .cta-container {
+            .categories-container {
                 padding: 0 1.5rem;
             }
-            
-            .order-card {
-                margin: 2rem 1.5rem;
-            }
-            
-            .hero-buttons {
-                flex-direction: column;
-                align-items: center;
-            }
-            
-            .cta-button,
-            .btn-secondary {
-                width: 100%;
-                text-align: center;
-                max-width: 300px;
-            }
-        }
-
-        /* Scroll animations */
-        .scroll-animate {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.8s ease-out;
-        }
-
-        .scroll-animate.animate {
-            opacity: 1;
-            transform: translateY(0);
         }
     </style>
 </head>
@@ -1079,17 +466,13 @@
     <!-- Navigation -->
     <nav class="navbar" id="navbar">
         <div class="nav-container">
-            <a href="#" class="logo">the grain smith</a>
+            <a href="home.html" class="logo">flour department</a>
             
             <ul class="nav-links" id="nav-links">
-                <li><a href="#home">home</a></li>
-                <li><a href="#process">process</a></li>
-                <li><a href="#gallery">gallery</a></li>
-                <li><a href="#about">about</a></li>
-                <li><a href="#contact">contact</a></li>
+                <li><a href="home.html">home</a></li>
+                <li><a href="recipe.html">recipe</a></li>
+                <li><a href="home.html#contact">contact</a></li>
             </ul>
-            
-            <a href="#order" class="cta-button">order now</a>
             
             <div class="mobile-menu-toggle" id="mobile-toggle">
                 <span></span>
@@ -1104,269 +487,163 @@
         <div class="hero-container">
             <div class="hero-content">
                 <h1 class="hero-title typewriter" id="typewriter-text"></h1>
-                
-                <!-- Mobile order button (only visible on mobile) -->
-                <a href="#order" class="cta-button mobile-order-button">order culture</a>
-                
-                <div style="width: 100px; height: 2px; background: var(--soft-blue); margin: 2rem 0; border-radius: 2px;"></div>
-                
-                <p class="hero-subtitle">eco-packaged • no microplastics • vegan friendly</p>
-                
-                <div class="hero-features">
-                    <div class="feature-item">zero plastic contamination</div>
-                    <div class="feature-item">living culture promise</div>
-                    <div class="feature-item">traditional methods</div>
-                </div>
-                
-                <div class="hero-buttons">
-                    <a href="#process" class="btn-secondary">learn process</a>
-                </div>
-            </div>
-            
-            <div class="hero-image">
-                <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2072&q=80" alt="Artisan sourdough bread and starter">
+                <p class="hero-subtitle">premium sourdough starter kits and equipment, completely free from microplastic contamination</p>
             </div>
         </div>
     </section>
 
-    <!-- Stats Section -->
-    <section class="stats-section">
-        <div class="stats-container">
-            <h2 class="stats-title">the microplastic crisis</h2>
-            <div class="stats-grid">
-                <div class="stat-card">
-                    <span class="stat-number">5G</span>
-                    <div class="stat-label">weekly consumption</div>
-                    <p class="stat-description">average microplastic intake per person weekly - equivalent to one credit card</p>
-                </div>
-                <div class="stat-card">
-                    <span class="stat-number">90%</span>
-                    <div class="stat-label">food contaminated</div>
-                    <p class="stat-description">of commercially packaged foods contain detectable microplastic particles</p>
-                </div>
-                <div class="stat-card">
-                    <span class="stat-number">0</span>
-                    <div class="stat-label">our tolerance</div>
-                    <p class="stat-description">zero microplastic contamination in our sourdough culture process</p>
-                </div>
+    <!-- Product Categories -->
+    <section class="categories" id="products">
+        <div class="categories-container">
+            <div class="category-nav">
+                <button class="category-button active" data-category="starter">starter kits</button>
+                <button class="category-button" data-category="equipment">equipment</button>
             </div>
-        </div>
-    </section>
 
-    <!-- Process Section -->
-    <section class="process-section" id="process">
-        <div class="process-container">
-            <h2 class="section-title scroll-animate">pure cultivation process</h2>
-            
-            <div class="process-grid">
-                <div class="process-step scroll-animate">
-                    <div class="process-number mono">01</div>
-                    <h3 class="process-title">glass cultivation</h3>
-                    <p class="process-description">every starter begins in laboratory-grade glass vessels. no plastic materials ever contact your living culture during the entire cultivation process.</p>
-                </div>
-                
-                <div class="process-step scroll-animate">
-                    <div class="process-number mono">02</div>
-                    <h3 class="process-title">traditional fermentation</h3>
-                    <p class="process-description">seven-day natural fermentation using wild yeast and lactobacillus bacteria. temperature-controlled environments maintain optimal culture health.</p>
-                </div>
-                
-                <div class="process-step scroll-animate">
-                    <div class="process-number mono">03</div>
-                    <h3 class="process-title">plastic-free delivery</h3>
-                    <p class="process-description">dehydrated and packaged in biodegradable materials. your culture arrives pure, uncontaminated, and ready for activation.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Image Grid Section -->
-    <section class="image-grid-section">
-        <div class="image-grid">
-            <div class="image-grid-item">
-                <img src="https://images.unsplash.com/photo-1595535873420-a599195b3f4a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Glass jars with starter">
-            </div>
-            <div class="image-grid-item">
-                <img src="https://images.unsplash.com/photo-1574790398831-760d44bb7fd8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Organic grains">
-            </div>
-            <div class="image-grid-item">
-                <img src="https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Fresh bread sharing">
-            </div>
-            <div class="image-grid-item">
-                <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ca4b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Rustic kitchen">
-            </div>
-        </div>
-    </section>
-
-    <!-- Gallery Section -->
-    <section class="gallery-section" id="gallery">
-        <div class="gallery-container">
-            <h2 class="section-title scroll-animate">artisan process</h2>
-            
-            <div class="gallery-grid">
-                <div class="gallery-item scroll-animate">
-                    <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Active sourdough starter">
-                    <div class="gallery-overlay">
-                        <h3 class="gallery-title">living culture</h3>
-                        <p class="gallery-description">wild yeast and beneficial bacteria creating the foundation of authentic sourdough bread.</p>
-                    </div>
-                </div>
-                
-                <div class="gallery-item scroll-animate">
-                    <img src="https://images.unsplash.com/photo-1549931319-a545dcf3bc73?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Hands kneading dough">
-                    <div class="gallery-overlay">
-                        <h3 class="gallery-title">artisan craft</h3>
-                        <p class="gallery-description">the tactile connection between baker and dough - a tradition spanning generations.</p>
-                    </div>
-                </div>
-                
-                <div class="gallery-item scroll-animate">
-                    <img src="https://images.unsplash.com/photo-1586444248902-2f64eddc13df?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Fresh bread loaves">
-                    <div class="gallery-overlay">
-                        <h3 class="gallery-title">perfect results</h3>
-                        <p class="gallery-description">complex flavors, perfect crust, and nourishing substance in every loaf.</p>
-                    </div>
-                </div>
-                
-                <div class="gallery-item scroll-animate">
-                    <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ca4b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2081&q=80" alt="Kitchen workspace">
-                    <div class="gallery-overlay">
-                        <h3 class="gallery-title">kitchen heritage</h3>
-                        <p class="gallery-description">creating warmth and tradition in kitchens worldwide.</p>
-                    </div>
-                </div>
-                
-                <div class="gallery-item scroll-animate">
-                    <img src="https://images.unsplash.com/photo-1574790398831-760d44bb7fd8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80" alt="Sustainable grains">
-                    <div class="gallery-overlay">
-                        <h3 class="gallery-title">sustainable future</h3>
-                        <p class="gallery-description">supporting regenerative agriculture and environmental responsibility.</p>
-                    </div>
-                </div>
-                
-                <div class="gallery-item scroll-animate">
-                    <img src="https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80" alt="Bread sharing">
-                    <div class="gallery-overlay">
-                        <h3 class="gallery-title">shared nourishment</h3>
-                        <p class="gallery-description">bringing communities together around honest, wholesome bread.</p>
-                    </div>
-                </div>
-
-                <div class="gallery-item scroll-animate">
-                    <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80" alt="Sourdough loaf">
-                    <div class="gallery-overlay">
-                        <h3 class="gallery-title">pure ingredients</h3>
-                        <p class="gallery-description">every loaf made with care, free from artificial additives and plastic contamination.</p>
-                    </div>
-                </div>
-
-                <div class="gallery-item scroll-animate">
-                    <img src="https://images.unsplash.com/photo-1571115764595-644a1f56a55c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80" alt="Traditional bread making">
-                    <div class="gallery-overlay">
-                        <h3 class="gallery-title">time-honored methods</h3>
-                        <p class="gallery-description">preserving ancient techniques for modern health-conscious families.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section class="about-section" id="about">
-        <div class="about-container">
-            <h2 class="section-title scroll-animate">mission: zero contamination</h2>
-            
-            <div class="about-content">
-                <div class="about-text scroll-animate">
-                    <p class="about-description">microplastics infiltrate our food system daily. from packaging degradation to processing equipment, plastic particles accumulate in our bodies with unknown long-term consequences.</p>
-                    
-                    <p class="about-description">we believe the most ancient and nourishing foods should remain pure. our sourdough cultures are cultivated, stored, and shipped using only natural materials - eliminating every source of plastic contamination.</p>
-                    
-                    <div class="commitment-grid">
-                        <div class="commitment-item scroll-animate">
-                            <h4>laboratory testing</h4>
-                            <p>every batch analyzed for microplastic contamination using advanced spectrometry techniques.</p>
-                        </div>
-                        
-                        <div class="commitment-item scroll-animate">
-                            <h4>health protection</h4>
-                            <p>safeguarding families from hidden plastic particles in everyday food packaging.</p>
-                        </div>
-                        
-                        <div class="commitment-item scroll-animate">
-                            <h4>environmental leadership</h4>
-                            <p>proving premium products thrive without plastic dependency or environmental compromise.</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="about-image scroll-animate">
-                    <img src="https://images.unsplash.com/photo-1571115764595-644a1f56a55c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80" alt="Traditional bread making">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CTA Section -->
-    <section class="cta-section" id="order">
-        <div class="cta-container">
-            <h2 class="cta-title">choose purity</h2>
-            <p class="cta-subtitle">join the movement toward microplastic-free food. your health and the planet deserve uncompromised purity.</p>
-            <a href="#contact" class="cta-button-large">order starter culture</a>
-        </div>
-    </section>
-
-    <!-- Order Section -->
-    <section class="order-section" id="contact">
-        <div style="max-width: 1000px; margin: 0 auto; padding: 0 2rem;">
-            <h2 class="section-title scroll-animate">order your culture</h2>
-            
-            <div class="order-card scroll-animate">
+            <!-- Starter Kits Category -->
+            <div class="category-section active" id="starter">
                 <div class="product-grid">
-                    <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" alt="Sourdough culture package" style="width: 100%; filter: sepia(20%) saturate(80%); border-radius: 15px;">
-                    
-                    <div class="product-info">
-                        <h3>25g dehydrated sourdough culture</h3>
-                        <p style="color: var(--text-gray); margin-bottom: 2rem; font-weight: 300;">pure living culture with complete plastic-free packaging</p>
-                        
-                        <div class="price">$34.99</div>
-                        
-                        <div class="product-features">
-                            <div style="margin-bottom: 0.5rem;">• 7-day active starter</div>
-                            <div style="margin-bottom: 0.5rem;">• zero plastic contact</div>
-                            <div style="margin-bottom: 0.5rem;">• complete care guide</div>
-                            <div style="margin-bottom: 0.5rem;">• recipe collection</div>
-                            <div style="margin-bottom: 0.5rem;">• biodegradable packaging</div>
+                    <div class="product-card">
+                        <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Complete Starter Kit" class="product-image">
+                        <div class="product-info">
+                            <h3 class="product-title">complete starter kit</h3>
+                            <p class="product-description">everything you need to begin your plastic-free sourdough journey</p>
+                            <div class="product-features">
+                                <div class="feature-item">25g dehydrated sourdough culture</div>
+                                <div class="feature-item">16oz mason jar with lid</div>
+                                <div class="feature-item">organic cotton cover cloth</div>
+                                <div class="feature-item">bamboo mixing spoon</div>
+                                <div class="feature-item">complete care guide</div>
+                                <div class="feature-item">recipe collection</div>
+                            </div>
+                            <div class="product-price">$49.99</div>
+                            <button class="buy-button" data-product="starter-kit">order starter kit</button>
+                        </div>
+                    </div>
+
+                    <div class="product-card">
+                        <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Culture Refill" class="product-image">
+                        <div class="product-info">
+                            <h3 class="product-title">culture refill</h3>
+                            <p class="product-description">pure dehydrated sourdough culture for existing bakers</p>
+                            <div class="product-features">
+                                <div class="feature-item">25g dehydrated sourdough culture</div>
+                                <div class="feature-item">biodegradable packaging</div>
+                                <div class="feature-item">activation instructions</div>
+                                <div class="feature-item">zero plastic contact</div>
+                                <div class="feature-item">7-day active guarantee</div>
+                            </div>
+                            <div class="product-price">$24.99</div>
+                            <button class="buy-button" data-product="culture-refill">order refill</button>
                         </div>
                     </div>
                 </div>
-                
-                <form class="order-form">
-                    <div class="form-row">
-                        <input type="text" placeholder="first name" required>
-                        <input type="text" placeholder="last name" required>
+            </div>
+
+            <!-- Equipment Category -->
+            <div class="category-section" id="equipment">
+                <div class="product-grid">
+                    <div class="product-card">
+                        <img src="https://images.unsplash.com/photo-1571115764595-644a1f56a55c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Dough Scraper" class="product-image">
+                        <div class="product-info">
+                            <h3 class="product-title">bamboo dough scraper</h3>
+                            <p class="product-description">essential tool for dough handling and bench work</p>
+                            <div class="product-features">
+                                <div class="feature-item">sustainable bamboo construction</div>
+                                <div class="feature-item">smooth beveled edge</div>
+                                <div class="feature-item">comfortable grip design</div>
+                                <div class="feature-item">naturally antimicrobial</div>
+                                <div class="feature-item">plastic-free alternative</div>
+                            </div>
+                            <div class="product-price">$18.99</div>
+                            <button class="buy-button" data-product="dough-scraper">order scraper</button>
+                        </div>
                     </div>
-                    
-                    <input type="email" placeholder="email address" required>
-                    <input type="tel" placeholder="phone number">
-                    <textarea placeholder="shipping address" required rows="3"></textarea>
-                    
-                    <div class="checkbox-row">
-                        <input type="checkbox" id="agreement" required>
-                        <label for="agreement">
-                            i understand this is a living culture requiring daily care and feeding
-                        </label>
+
+                    <div class="product-card">
+                        <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ca4b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Dutch Oven" class="product-image">
+                        <div class="product-info">
+                            <h3 class="product-title">cast iron dutch oven</h3>
+                            <p class="product-description">professional-grade vessel for perfect sourdough baking</p>
+                            <div class="product-features">
+                                <div class="feature-item">5.5 quart capacity</div>
+                                <div class="feature-item">pre-seasoned cast iron</div>
+                                <div class="feature-item">dual-function lid</div>
+                                <div class="feature-item">oven safe to 500°F</div>
+                                <div class="feature-item">lifetime durability</div>
+                            </div>
+                            <div class="product-price">$89.99</div>
+                            <button class="buy-button" data-product="dutch-oven">order dutch oven</button>
+                        </div>
                     </div>
-                    
-                    <button type="submit" class="cta-button" style="padding: 1.25rem; font-size: 0.9rem; width: 100%;">
-                        order culture
-                    </button>
-                </form>
-                
-                <div class="trust-indicators">
-                    <span>free shipping</span>
-                    <span>30-day guarantee</span>
-                    <span>100% plastic-free</span>
+
+                    <div class="product-card">
+                        <img src="https://images.unsplash.com/photo-1574790398831-760d44bb7fd8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Proofing Basket" class="product-image">
+                        <div class="product-info">
+                            <h3 class="product-title">rattan proofing basket</h3>
+                            <p class="product-description">traditional banneton for perfect dough shaping and texture</p>
+                            <div class="product-features">
+                                <div class="feature-item">natural rattan construction</div>
+                                <div class="feature-item">9 inch round design</div>
+                                <div class="feature-item">includes linen liner</div>
+                                <div class="feature-item">creates beautiful spiral pattern</div>
+                                <div class="feature-item">moisture-wicking properties</div>
+                            </div>
+                            <div class="product-price">$32.99</div>
+                            <button class="buy-button" data-product="proofing-basket">order basket</button>
+                        </div>
+                    </div>
+
+                    <div class="product-card">
+                        <img src="https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Bread Lame" class="product-image">
+                        <div class="product-info">
+                            <h3 class="product-title">brass bread lame</h3>
+                            <p class="product-description">precision scoring tool for professional bread decoration</p>
+                            <div class="product-features">
+                                <div class="feature-item">solid brass handle</div>
+                                <div class="feature-item">replaceable razor blades</div>
+                                <div class="feature-item">ergonomic curved design</div>
+                                <div class="feature-item">includes 5 blades</div>
+                                <div class="feature-item">artisan-quality finish</div>
+                            </div>
+                            <div class="product-price">$24.99</div>
+                            <button class="buy-button" data-product="bread-lame">order lame</button>
+                        </div>
+                    </div>
+
+                    <div class="product-card">
+                        <img src="https://images.unsplash.com/photo-1571115764595-644a1f56a55c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Kitchen Scale" class="product-image">
+                        <div class="product-info">
+                            <h3 class="product-title">bamboo kitchen scale</h3>
+                            <p class="product-description">precision weighing with sustainable materials</p>
+                            <div class="product-features">
+                                <div class="feature-item">bamboo platform surface</div>
+                                <div class="feature-item">digital precision to 1g</div>
+                                <div class="feature-item">11lb capacity</div>
+                                <div class="feature-item">tare function</div>
+                                <div class="feature-item">low battery indicator</div>
+                            </div>
+                            <div class="product-price">$45.99</div>
+                            <button class="buy-button" data-product="kitchen-scale">order scale</button>
+                        </div>
+                    </div>
+
+                    <div class="product-card">
+                        <img src="https://images.unsplash.com/photo-1574790398831-760d44bb7fd8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Mixing Bowls" class="product-image">
+                        <div class="product-info">
+                            <h3 class="product-title">ceramic mixing bowl set</h3>
+                            <p class="product-description">three-piece nesting bowl set for all mixing needs</p>
+                            <div class="product-features">
+                                <div class="feature-item">food-safe ceramic glaze</div>
+                                <div class="feature-item">3 sizes: 1qt, 2qt, 3qt</div>
+                                <div class="feature-item">nesting design saves space</div>
+                                <div class="feature-item">wide pouring spouts</div>
+                                <div class="feature-item">dishwasher safe</div>
+                            </div>
+                            <div class="product-price">$38.99</div>
+                            <button class="buy-button" data-product="mixing-bowls">order bowl set</button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -1375,35 +652,10 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="footer-container">
-            <div class="footer-grid">
-                <div>
-                    <h3 class="footer-brand">the grain smith</h3>
-                    <p class="footer-description">pioneering plastic-free sourdough culture for a healthier world. every starter represents our commitment to nourish without compromise, honoring both tradition and environmental responsibility.</p>
-                </div>
-                
-                <div>
-                    <h4 class="footer-title">navigation</h4>
-                    <ul class="footer-links">
-                        <li><a href="#home">home</a></li>
-                        <li><a href="#process">process</a></li>
-                        <li><a href="#gallery">gallery</a></li>
-                        <li><a href="#about">about</a></li>
-                        <li><a href="#contact">order</a></li>
-                    </ul>
-                </div>
-                
-                <div>
-                    <h4 class="footer-title">contact</h4>
-                    <ul class="footer-links">
-                        <li>hello@thegrainsmith.com</li>
-                        <li>(555) 123-GRAIN</li>
-                        <li>artisan kitchen, usa</li>
-                    </ul>
-                </div>
-            </div>
-            
+            <h3 class="footer-brand">flour department</h3>
+            <p class="footer-description">pioneering plastic-free sourdough culture and equipment for a healthier world. every product represents our commitment to nourish without compromise.</p>
             <div class="footer-bottom">
-                <p>&copy; 2025 the grain smith. all rights reserved.</p>
+                <p>&copy; 2025 flour department. all rights reserved.</p>
             </div>
         </div>
     </footer>
@@ -1411,7 +663,7 @@
     <script>
         // Typewriter effect for hero title
         function typewriterEffect() {
-            const text = "25g dehydrated\nsourdough culture";
+            const text = "plastic-free\nsourdough";
             const element = document.getElementById('typewriter-text');
             let i = 0;
             
@@ -1471,6 +723,56 @@
             }
         });
 
+        // Category switching
+        const categoryButtons = document.querySelectorAll('.category-button');
+        const categorySections = document.querySelectorAll('.category-section');
+
+        categoryButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                const targetCategory = this.getAttribute('data-category');
+                
+                // Update active button
+                categoryButtons.forEach(btn => btn.classList.remove('active'));
+                this.classList.add('active');
+                
+                // Show target category section
+                categorySections.forEach(section => {
+                    section.classList.remove('active');
+                    if (section.id === targetCategory) {
+                        section.classList.add('active');
+                    }
+                });
+            });
+        });
+
+        // Buy button functionality - replace with your Stripe URLs
+        const buyButtons = document.querySelectorAll('.buy-button');
+        const stripeUrls = {
+            'starter-kit': 'https://your-stripe-url-for-starter-kit',
+            'culture-refill': 'https://your-stripe-url-for-culture-refill',
+            'dough-scraper': 'https://your-stripe-url-for-dough-scraper',
+            'dutch-oven': 'https://your-stripe-url-for-dutch-oven',
+            'proofing-basket': 'https://your-stripe-url-for-proofing-basket',
+            'bread-lame': 'https://your-stripe-url-for-bread-lame',
+            'kitchen-scale': 'https://your-stripe-url-for-kitchen-scale',
+            'mixing-bowls': 'https://your-stripe-url-for-mixing-bowls'
+        };
+
+        buyButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                const product = this.getAttribute('data-product');
+                const stripeUrl = stripeUrls[product];
+                
+                if (stripeUrl && stripeUrl !== 'https://your-stripe-url-for-' + product) {
+                    // Open Stripe checkout in new tab
+                    window.open(stripeUrl, '_blank');
+                } else {
+                    // Placeholder functionality - replace with your actual Stripe URLs
+                    alert(`Stripe checkout for ${product} - Please replace with actual Stripe URL`);
+                }
+            });
+        });
+
         // Smooth scrolling for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
@@ -1484,114 +786,6 @@
                 }
             });
         });
-
-        // Scroll animations
-        const observerOptions = {
-            threshold: 0.15,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver(function(entries) {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('animate');
-                }
-            });
-        }, observerOptions);
-
-        // Observe elements for animation
-        document.querySelectorAll('.scroll-animate').forEach(el => {
-            observer.observe(el);
-        });
-
-        // Form submission
-        document.querySelector('.order-form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            const button = this.querySelector('button[type="submit"]');
-            const originalText = button.textContent;
-            
-            button.textContent = 'processing...';
-            button.disabled = true;
-            button.style.opacity = '0.6';
-            
-            // Simulate order processing
-            setTimeout(() => {
-                button.textContent = 'order received ✓';
-                button.style.background = '#f4d6d2';
-                
-                setTimeout(() => {
-                    button.textContent = originalText;
-                    button.disabled = false;
-                    button.style.opacity = '1';
-                    button.style.background = '';
-                    this.reset();
-                }, 3000);
-            }, 2000);
-        });
-
-        // Parallax effect for images (reduced for mobile performance)
-        let ticking = false;
-        function updateParallax() {
-            const scrolled = window.pageYOffset;
-            const parallaxElements = document.querySelectorAll('.hero-image img, .about-image img');
-            
-            if (window.innerWidth > 768) {
-                parallaxElements.forEach(element => {
-                    const speed = 0.3;
-                    const yPos = -(scrolled * speed);
-                    element.style.transform = `translateY(${yPos}px)`;
-                });
-            }
-            ticking = false;
-        }
-
-        window.addEventListener('scroll', function() {
-            if (!ticking) {
-                requestAnimationFrame(updateParallax);
-                ticking = true;
-            }
-        });
-
-        // Dynamic counter animation for stats
-        function animateCounters() {
-            const counters = document.querySelectorAll('.stat-number');
-            counters.forEach(counter => {
-                const target = counter.textContent;
-                const isNumber = !isNaN(target.replace(/[^0-9]/g, ''));
-                
-                if (isNumber) {
-                    const numericTarget = parseInt(target.replace(/[^0-9]/g, ''));
-                    const suffix = target.replace(/[0-9]/g, '');
-                    let current = 0;
-                    const increment = numericTarget / 100;
-                    
-                    const timer = setInterval(() => {
-                        current += increment;
-                        if (current >= numericTarget) {
-                            counter.textContent = target;
-                            clearInterval(timer);
-                        } else {
-                            counter.textContent = Math.floor(current) + suffix;
-                        }
-                    }, 20);
-                }
-            });
-        }
-
-        // Trigger counter animation when stats section is visible
-        const statsObserver = new IntersectionObserver(function(entries) {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    animateCounters();
-                    statsObserver.unobserve(entry.target);
-                }
-            });
-        }, { threshold: 0.5 });
-
-        const statsSection = document.querySelector('.stats-section');
-        if (statsSection) {
-            statsObserver.observe(statsSection);
-        }
 
         // Handle window resize for responsive adjustments
         window.addEventListener('resize', function() {
