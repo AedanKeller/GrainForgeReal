@@ -1,64 +1,184 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2VJDYJDHYZ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-2VJDYJDHYZ');
+</script>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Flour Department - Plastic-Free Sourdough Products</title>
-    
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@200;300;400;500;600&family=JetBrains+Mono:wght@200;300;400&display=swap" rel="stylesheet">
-    
-    <!-- Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
+    <title>Flour Department</title>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
     <style>
-        :root {
-            --primary-black: #2c2c2c;
-            --soft-black: #3a3a3a;
-            --light-gray: #faf9f7;
-            --mid-gray: #e8e5e0;
-            --text-gray: #8b7355;
-            --pure-white: #ffffff;
-            --accent-line: #2c2c2c;
-            --warm-brown: #d4c4b0;
-            --light-brown: #f5f0e8;
-            --pastel-blue: #e8f2f8;
-            --soft-blue: #d2e6f4;
-        }
-
+        /* User-friendly accessibility improvements */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
+        /* Focus states for keyboard navigation */
+        a:focus, button:focus, input:focus, textarea:focus {
+            outline: 2px solid #64FFDA;
+            outline-offset: 2px;
+        }
+
+        /* Ensure sufficient color contrast */
+        .hero p, .scientist-content p, .product-description {
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        /* Improve button accessibility */
+        .hero-cta, .nav-cta, .product-cta {
+            cursor: pointer;
+            min-height: 44px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Screen reader friendly navigation */
+        .burger-menu {
+            position: relative;
+        }
+
+        .burger-menu:focus {
+            outline: 2px solid #64FFDA;
+            outline-offset: 2px;
+        }
+
         body {
-            font-family: 'Outfit', sans-serif;
-            font-weight: 300;
+            background-color: #000000;
+            color: #ffffff;
+            font-family: 'Inter', sans-serif;
             line-height: 1.6;
-            color: var(--primary-black);
-            background: var(--light-brown);
             overflow-x: hidden;
+            position: relative;
         }
 
-        /* Typography */
-        h1, h2, h3, h4, h5, h6 {
-            font-family: 'Outfit', sans-serif;
-            font-weight: 300;
-            letter-spacing: -0.01em;
-            margin-bottom: 1rem;
+        /* Stars background for black sections */
+        .stars-bg {
+            position: relative;
         }
 
-        .mono {
-            font-family: 'JetBrains Mono', monospace;
-            font-weight: 300;
+        .stars-bg::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                radial-gradient(2px 2px at 20px 30px, #fff, transparent),
+                radial-gradient(2px 2px at 40px 70px, #fff, transparent),
+                radial-gradient(1px 1px at 90px 40px, #fff, transparent),
+                radial-gradient(1px 1px at 130px 80px, #fff, transparent),
+                radial-gradient(2px 2px at 160px 30px, #fff, transparent),
+                radial-gradient(1px 1px at 200px 90px, #fff, transparent),
+                radial-gradient(1px 1px at 240px 50px, #fff, transparent),
+                radial-gradient(2px 2px at 280px 120px, #fff, transparent),
+                radial-gradient(1px 1px at 320px 20px, #fff, transparent),
+                radial-gradient(1px 1px at 360px 80px, #fff, transparent),
+                radial-gradient(2px 2px at 400px 40px, #fff, transparent),
+                radial-gradient(1px 1px at 440px 100px, #fff, transparent),
+                radial-gradient(1px 1px at 480px 60px, #fff, transparent),
+                radial-gradient(2px 2px at 520px 140px, #fff, transparent),
+                radial-gradient(1px 1px at 560px 30px, #fff, transparent),
+                radial-gradient(1px 1px at 600px 90px, #fff, transparent),
+                radial-gradient(2px 2px at 640px 50px, #fff, transparent),
+                radial-gradient(1px 1px at 680px 110px, #fff, transparent),
+                radial-gradient(1px 1px at 720px 20px, #fff, transparent),
+                radial-gradient(1px 1px at 760px 80px, #fff, transparent),
+                radial-gradient(2px 2px at 800px 45px, #fff, transparent),
+                radial-gradient(1px 1px at 840px 95px, #fff, transparent),
+                radial-gradient(1px 1px at 880px 35px, #fff, transparent),
+                radial-gradient(2px 2px at 920px 125px, #fff, transparent),
+                radial-gradient(1px 1px at 960px 65px, #fff, transparent);
+            background-repeat: repeat;
+            background-size: 1000px 200px;
+            opacity: 0.6;
+            pointer-events: none;
+            z-index: 1;
         }
 
-        /* Smooth scrolling */
-        html {
-            scroll-behavior: smooth;
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Mobile Navigation Menu */
+        .mobile-menu {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background: rgba(0, 0, 0, 0.95);
+            backdrop-filter: blur(10px);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .mobile-menu.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .mobile-menu ul {
+            list-style: none;
+            text-align: center;
+        }
+
+        .mobile-menu li {
+            margin: 20px 0;
+        }
+
+        .mobile-menu a {
+            color: #ffffff;
+            text-decoration: none;
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            transition: color 0.3s ease;
+        }
+
+        .mobile-menu a:hover {
+            color: #64FFDA;
+        }
+
+        .mobile-menu .nav-cta {
+            margin-top: 30px;
+            padding: 15px 30px;
+            border: 2px solid #64FFDA;
+            font-size: 1rem;
+        }
+
+        .close-menu {
+            position: absolute;
+            top: 25px;
+            right: 25px;
+            background: none;
+            border: none;
+            color: #ffffff;
+            font-size: 2rem;
+            cursor: pointer;
+            padding: 10px;
         }
 
         /* Navigation */
@@ -68,581 +188,946 @@
             left: 0;
             right: 0;
             z-index: 1000;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(20px);
-            border-bottom: 1px solid var(--warm-brown);
-            transition: all 0.3s ease;
-        }
-
-        .nav-container {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 1.5rem 2rem;
+            padding: 15px 20px;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            background: transparent;
+            transition: all 0.3s ease;
         }
 
-        .logo {
-            font-family: 'Outfit', sans-serif;
-            font-size: 1.25rem;
-            font-weight: 400;
-            color: var(--primary-black);
+        .navbar.scrolled {
+            background: rgba(0, 0, 0, 0.95) !important;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+        }
+
+        .nav-logo {
+            font-family: 'Orbitron', monospace;
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #ffffff;
             text-decoration: none;
-            letter-spacing: 0.05em;
-            text-transform: lowercase;
+            letter-spacing: 0.1em;
         }
 
         .nav-links {
             display: flex;
             list-style: none;
-            gap: 3rem;
-            align-items: center;
+            gap: 30px;
+            margin: 0;
+            padding: 0;
         }
 
         .nav-links a {
+            color: #ffffff;
             text-decoration: none;
-            color: var(--text-gray);
-            font-weight: 300;
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 400;
             font-size: 0.9rem;
-            letter-spacing: 0.02em;
-            text-transform: lowercase;
-            transition: all 0.3s ease;
+            transition: color 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
         }
 
         .nav-links a:hover {
-            color: var(--primary-black);
+            color: #64FFDA;
         }
 
-        /* Mobile menu */
-        .mobile-menu-toggle {
+        .nav-cta {
+            padding: 10px 20px;
+            background: transparent;
+            border: 1px solid #64FFDA;
+            color: #64FFDA;
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 500;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            font-size: 0.85rem;
+        }
+
+        .nav-cta:hover {
+            background: #64FFDA;
+            color: #000000;
+        }
+
+        .burger-menu {
+            width: 30px;
+            height: 30px;
+            background: transparent;
+            border: none;
             display: none;
             flex-direction: column;
+            justify-content: center;
+            align-items: center;
             cursor: pointer;
-            gap: 4px;
-            padding: 8px;
+            z-index: 10000;
         }
 
-        .mobile-menu-toggle span {
+        .burger-line {
             width: 20px;
             height: 2px;
-            background: var(--primary-black);
-            transition: 0.3s;
-            border-radius: 1px;
+            background: #ffffff;
+            margin: 2px 0;
+            transition: all 0.3s ease;
+        }
+
+        .burger-menu.active .burger-line:nth-child(1) {
+            transform: rotate(-45deg) translate(-5px, 6px);
+        }
+
+        .burger-menu.active .burger-line:nth-child(2) {
+            opacity: 0;
+        }
+
+        .burger-menu.active .burger-line:nth-child(3) {
+            transform: rotate(45deg) translate(-5px, -6px);
         }
 
         /* Hero Section */
         .hero {
-            min-height: 60vh;
+            height: 100vh;
+            min-height: 600px;
+            position: relative;
             display: flex;
             align-items: center;
-            position: relative;
-            background: linear-gradient(135deg, var(--light-brown) 0%, var(--pastel-blue) 100%);
-            padding-top: 100px;
+            justify-content: center;
+            text-align: center;
+            overflow: hidden;
         }
 
-        .hero-container {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 0 2rem;
-            text-align: center;
+        .hero-video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.4);
+            z-index: 1;
         }
 
         .hero-content {
-            opacity: 0;
-            animation: fadeInUp 1s ease-out 0.3s forwards;
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            padding: 0 20px;
         }
 
-        .hero-title {
-            font-size: clamp(2.5rem, 8vw, 4rem);
+        .hero h1 {
+            font-family: 'Orbitron', monospace;
+            font-size: clamp(2.5rem, 8vw, 6rem);
+            font-weight: 900;
+            letter-spacing: 0.05em;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+
+        .hero p {
+            font-size: clamp(1rem, 3vw, 1.2rem);
             font-weight: 300;
-            line-height: 1.1;
-            color: var(--primary-black);
-            margin-bottom: 1rem;
-            letter-spacing: -0.02em;
+            margin-bottom: 30px;
+            opacity: 0.9;
+            line-height: 1.5;
         }
 
-        .hero-subtitle {
-            font-size: clamp(0.9rem, 2vw, 1.1rem);
-            color: var(--text-gray);
-            margin-bottom: 2rem;
-            font-weight: 300;
-            line-height: 1.7;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
+        .hero-cta {
+            padding: 15px 30px;
+            background: transparent;
+            border: 2px solid #ffffff;
+            color: #ffffff;
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 500;
+            font-size: clamp(0.9rem, 2.5vw, 1.1rem);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: inline-block;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
         }
 
-        /* Product Categories */
-        .categories {
-            padding: clamp(4rem, 10vw, 6rem) 0;
-            background: var(--pure-white);
+        .hero-cta:hover {
+            background: #ffffff;
+            color: #000000;
         }
 
-        .categories-container {
+        /* Bake Like a Scientist Section */
+        .scientist-section {
+            padding: 80px 0;
+            background: #000000;
+            color: #ffffff;
+        }
+
+        .scientist-content {
+            text-align: center;
+            margin-bottom: 60px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .scientist-content h2 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: clamp(2rem, 6vw, 4rem);
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: #64FFDA;
+            line-height: 1.2;
+        }
+
+        .scientist-content p {
+            font-size: clamp(1rem, 3vw, 1.2rem);
+            max-width: 800px;
+            margin: 0 auto;
+            opacity: 0.9;
+            line-height: 1.6;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 30px;
+            margin-top: 60px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .feature-item {
+            background: rgba(100, 255, 218, 0.05);
+            border: 1px solid rgba(100, 255, 218, 0.2);
+            transition: all 0.3s ease;
+            overflow: hidden;
+        }
+
+        .feature-item:hover {
+            background: rgba(100, 255, 218, 0.1);
+            transform: translateY(-5px);
+        }
+
+        .feature-image {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-bottom: 2px solid rgba(100, 255, 218, 0.3);
+        }
+
+        .feature-content {
+            padding: 30px 20px;
+            text-align: center;
+        }
+
+        .feature-item h3 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: clamp(1.2rem, 4vw, 1.4rem);
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: #64FFDA;
+            line-height: 1.3;
+        }
+
+        .feature-item p {
+            font-size: clamp(0.9rem, 3vw, 1rem);
+            opacity: 0.8;
+            line-height: 1.5;
+        }
+
+        /* Product Carousel Section - WHITE BACKGROUND */
+        .product-carousel-section {
+            padding: 80px 0 40px;
+            background: #ffffff;
+            color: #000000;
+        }
+
+        .carousel-container {
             max-width: 1400px;
             margin: 0 auto;
-            padding: 0 2rem;
+            padding: 0 20px;
         }
 
-        .category-nav {
+        .carousel-header {
+            text-align: center;
+            margin-bottom: 60px;
+            padding: 0;
+        }
+
+        .carousel-header h2 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: clamp(2rem, 6vw, 4rem);
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: #000000;
+            line-height: 1.2;
+        }
+
+        .carousel-header p {
+            font-size: clamp(1rem, 3vw, 1.2rem);
+            opacity: 0.8;
+            max-width: 600px;
+            margin: 0 auto;
+            color: #000000;
+            line-height: 1.6;
+        }
+
+        .carousel-wrapper {
+            position: relative;
+            overflow: hidden;
+            width: 100%;
+        }
+
+        .carousel-track-container {
+            overflow: hidden;
+            width: 100%;
+        }
+
+        .carousel-track {
             display: flex;
-            justify-content: center;
-            gap: 2rem;
-            margin-bottom: 4rem;
-        }
-
-        .category-button {
-            padding: 0.75rem 2rem;
-            border: 2px solid var(--warm-brown);
-            background: transparent;
-            color: var(--text-gray);
-            font-family: inherit;
-            font-weight: 300;
-            text-transform: lowercase;
-            letter-spacing: 0.05em;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            border-radius: 25px;
-            font-size: 0.9rem;
-        }
-
-        .category-button.active,
-        .category-button:hover {
-            background: var(--soft-blue);
-            color: var(--primary-black);
-            border-color: var(--soft-blue);
-        }
-
-        .product-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 3rem;
-            margin-top: 3rem;
+            transition: transform 0.5s ease;
+            gap: 20px;
         }
 
         .product-card {
-            background: var(--light-brown);
-            border: 1px solid var(--warm-brown);
-            border-radius: 20px;
+            flex: 0 0 100%;
+            width: 100%;
+            background: #f8f8f8;
+            border: none;
+            border-radius: 0;
             overflow: hidden;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            opacity: 0;
-            animation: fadeInUp 0.8s ease-out forwards;
+            cursor: pointer;
+            transition: transform 0.3s ease;
         }
-
-        .product-card:nth-child(1) { animation-delay: 0.2s; }
-        .product-card:nth-child(2) { animation-delay: 0.4s; }
-        .product-card:nth-child(3) { animation-delay: 0.6s; }
-        .product-card:nth-child(4) { animation-delay: 0.8s; }
 
         .product-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+        }
+
+        .product-image-container {
+            position: relative;
+            height: 300px;
+            overflow: hidden;
         }
 
         .product-image {
             width: 100%;
-            height: 250px;
+            height: 100%;
             object-fit: cover;
-            filter: sepia(20%) saturate(80%);
-            transition: filter 0.6s ease;
+            object-position: center;
+            transition: opacity 0.3s ease;
         }
 
-        .product-card:hover .product-image {
-            filter: sepia(10%) saturate(100%);
+        .product-image.hover-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+        }
+
+        .product-card:hover .product-image.default-image {
+            opacity: 0;
+        }
+
+        .product-card:hover .product-image.hover-image {
+            opacity: 1;
         }
 
         .product-info {
-            padding: 2rem;
+            padding: 30px 20px;
         }
 
         .product-title {
-            font-size: 1.3rem;
-            font-weight: 400;
-            margin-bottom: 0.5rem;
-            text-transform: lowercase;
-            letter-spacing: 0.02em;
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: clamp(1.1rem, 4vw, 1.4rem);
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: #000000;
+            line-height: 1.3;
         }
 
         .product-description {
-            color: var(--text-gray);
-            font-size: 0.9rem;
+            font-size: clamp(0.9rem, 3vw, 0.95rem);
+            opacity: 0.7;
+            margin-bottom: 25px;
             line-height: 1.6;
-            margin-bottom: 1.5rem;
-            font-weight: 300;
+            color: #000000;
         }
 
-        .product-features {
-            margin-bottom: 2rem;
-        }
-
-        .feature-item {
-            font-size: 0.85rem;
-            color: var(--text-gray);
-            margin-bottom: 0.5rem;
-            padding-left: 1rem;
-            position: relative;
-        }
-
-        .feature-item:before {
-            content: '•';
-            position: absolute;
-            left: 0;
-            color: var(--warm-brown);
-        }
-
-        .product-price {
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 1.5rem;
-            font-weight: 300;
-            color: var(--primary-black);
-            margin-bottom: 1.5rem;
-        }
-
-        .buy-button {
-            background: var(--soft-blue);
-            color: var(--primary-black);
-            padding: 1rem 2rem;
-            border: none;
-            font-weight: 300;
-            text-transform: lowercase;
+        .product-cta {
+            padding: 12px 24px;
+            background: transparent;
+            border: 1px solid #000000;
+            color: #000000;
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 500;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
             letter-spacing: 0.05em;
+            font-size: 0.85rem;
+            display: inline-block;
+        }
+
+        .product-cta:hover {
+            background: #000000;
+            color: #ffffff;
+        }
+
+        /* Carousel Navigation Arrows */
+        .carousel-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255, 255, 255, 0.9);
+            border: 2px solid #000000;
+            color: #000000;
+            width: 45px;
+            height: 45px;
+            border-radius: 0;
+            display: flex !important;
+            align-items: center;
+            justify-content: center;
             cursor: pointer;
             transition: all 0.3s ease;
-            text-decoration: none;
-            display: inline-block;
-            font-size: 0.9rem;
-            border-radius: 25px;
-            width: 100%;
+            font-size: 16px;
+            z-index: 100;
+            font-weight: bold;
+            user-select: none;
+        }
+
+        .carousel-nav:hover {
+            background: #000000;
+            color: #ffffff;
+            border-color: #000000;
+        }
+
+        .carousel-nav:disabled {
+            opacity: 0.3;
+            cursor: not-allowed;
+            pointer-events: none;
+        }
+
+        .carousel-nav.prev {
+            left: 10px;
+        }
+
+        .carousel-nav.next {
+            right: 10px;
+        }
+
+        .carousel-dots {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 30px;
+        }
+
+        .carousel-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(0, 0, 0, 0.3);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .carousel-dot.active {
+            background: #000000;
+            transform: scale(1.2);
+        }
+
+        /* Contact Section */
+        .contact-section {
+            padding: 80px 0;
+            background: #000000;
+            color: #ffffff;
+        }
+
+        .contact-content {
             text-align: center;
-            font-family: inherit;
+            margin-bottom: 50px;
+            position: relative;
+            z-index: 2;
         }
 
-        .buy-button:hover {
-            background: var(--pastel-blue);
-            transform: translateY(-2px);
+        .contact-content h2 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: clamp(2rem, 6vw, 4rem);
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: #64FFDA;
+            line-height: 1.2;
         }
 
-        /* Category Sections */
-        .category-section {
-            display: none;
+        .contact-content p {
+            font-size: clamp(1rem, 3vw, 1.2rem);
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+            color: #ffffff;
+            line-height: 1.6;
         }
 
-        .category-section.active {
-            display: block;
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 40px;
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        .contact-box {
+            background: rgba(100, 255, 218, 0.05);
+            padding: 40px 30px;
+            border: 1px solid rgba(100, 255, 218, 0.2);
+        }
+
+        .contact-box h3 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: clamp(1.3rem, 4vw, 1.8rem);
+            font-weight: 600;
+            margin-bottom: 25px;
+            color: #64FFDA;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            line-height: 1.3;
+        }
+
+        .contact-info {
+            margin-bottom: 20px;
+        }
+
+        .contact-info h4 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 500;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            font-size: clamp(0.85rem, 3vw, 0.9rem);
+            color: #64FFDA;
+        }
+
+        .contact-info p {
+            opacity: 0.9;
+            margin-bottom: 0;
+            color: #ffffff;
+            font-size: clamp(0.9rem, 3vw, 1rem);
+            line-height: 1.5;
+        }
+
+        .social-links {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .social-link {
+            color: #ffffff;
+            text-decoration: none;
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 500;
+            padding: 12px 0;
+            border-bottom: 1px solid rgba(100, 255, 218, 0.2);
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            font-size: clamp(0.85rem, 3vw, 0.9rem);
+        }
+
+        .social-link:hover {
+            color: #64FFDA;
+            border-bottom-color: #64FFDA;
+            padding-left: 10px;
         }
 
         /* Footer */
         .footer {
-            background: var(--primary-black);
-            color: white;
-            padding: clamp(4rem, 10vw, 6rem) 0 2rem;
-        }
-
-        .footer-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
-            text-align: center;
-        }
-
-        .footer-brand {
-            font-size: clamp(1.2rem, 4vw, 1.5rem);
-            margin-bottom: 1.5rem;
-            font-weight: 400;
-            letter-spacing: 0.05em;
-            text-transform: lowercase;
-        }
-
-        .footer-description {
-            opacity: 0.7;
-            line-height: 1.6;
-            font-weight: 300;
-            font-size: clamp(0.85rem, 2vw, 0.9rem);
-            margin-bottom: 2rem;
+            padding: 60px 0 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            background: #000000;
         }
 
         .footer-bottom {
-            padding-top: 2rem;
+            text-align: center;
+            padding-top: 30px;
             border-top: 1px solid rgba(255, 255, 255, 0.1);
             opacity: 0.5;
-            font-size: clamp(0.75rem, 2vw, 0.8rem);
-            font-weight: 300;
+            font-size: clamp(0.8rem, 2.5vw, 0.9rem);
         }
 
-        /* Animations */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-            to {
-                opacity: 1;
-            }
-        }
-
-        /* Responsive Design */
+        /* Responsive Breakpoints */
         @media (min-width: 768px) {
-            .nav-container {
-                padding: 2rem 3rem;
+            .container {
+                padding: 0 40px;
             }
-            
-            .hero-container,
-            .categories-container {
-                padding: 0 3rem;
+
+            .navbar {
+                padding: 20px 40px;
+            }
+
+            .carousel-container {
+                padding: 0 40px;
+            }
+
+            .features-grid {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 40px;
+                margin-top: 80px;
+            }
+
+            .product-card {
+                flex: 0 0 calc(33.333% - 15px);
+                width: calc(33.333% - 15px);
+            }
+
+            .product-image-container {
+                height: 350px;
+            }
+
+            .product-info {
+                padding: 40px;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 60px;
+                max-width: 1000px;
+            }
+
+            .contact-box {
+                padding: 60px 40px;
+            }
+
+            .scientist-section, .product-carousel-section, .contact-section {
+                padding: 120px 0;
+            }
+
+            .product-carousel-section {
+                padding: 120px 0 60px;
+            }
+
+            .carousel-nav {
+                width: 50px;
+                height: 50px;
+                font-size: 18px;
+            }
+
+            .carousel-nav.prev {
+                left: 10px;
+            }
+
+            .carousel-nav.next {
+                right: 10px;
             }
         }
 
-        @media (max-width: 768px) {
+        @media (min-width: 1200px) {
+            .carousel-container {
+                padding: 0 60px;
+            }
+        }
+
+        @media (max-width: 767px) {
             .nav-links {
                 display: none;
-                position: absolute;
-                top: 100%;
-                left: 0;
-                right: 0;
-                background: rgba(255, 255, 255, 0.98);
-                backdrop-filter: blur(20px);
-                border-top: 1px solid var(--warm-brown);
-                padding: 2rem;
-                flex-direction: column;
-                gap: 1.5rem;
-                box-shadow: 0 4px 20px rgba(0,0,0,0.1);
             }
-            
-            .nav-links.mobile-open {
+
+            .nav-cta {
+                display: none;
+            }
+
+            .burger-menu {
                 display: flex;
             }
-            
-            .mobile-menu-toggle {
-                display: flex;
+
+            .carousel-nav {
+                display: none !important;
             }
-            
+
             .hero {
-                padding-top: 120px;
-                min-height: 50vh;
+                min-height: 100vh;
             }
-            
-            .category-nav {
-                flex-direction: column;
-                align-items: center;
-                gap: 1rem;
+
+            .hero-content {
+                padding: 0 15px;
             }
-            
-            .category-button {
-                width: 200px;
-                text-align: center;
+
+            .scientist-content, .carousel-header, .contact-content {
+                padding: 0 15px;
             }
-            
-            .product-grid {
-                grid-template-columns: 1fr;
-                gap: 2rem;
+
+            .container {
+                padding: 0 15px;
+            }
+
+            .carousel-container {
+                padding: 0 15px;
+            }
+
+            .nav-logo {
+                font-size: 1rem;
             }
         }
 
-        @media (max-width: 480px) {
-            .nav-container {
-                padding: 1rem 1.5rem;
+        /* Touch-friendly improvements for mobile */
+        @media (max-width: 767px) {
+            .hero-cta, .product-cta, .social-link {
+                min-height: 48px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
             }
-            
-            .hero-container,
-            .categories-container {
-                padding: 0 1.5rem;
+
+            .carousel-dots {
+                margin-top: 25px;
+                gap: 15px;
+            }
+
+            .carousel-dot {
+                width: 14px;
+                height: 14px;
+            }
+
+            .feature-item, .product-card, .contact-box {
+                margin-bottom: 10px;
+            }
+
+            /* Improve text readability on mobile */
+            .hero p, .scientist-content p, .carousel-header p, .contact-content p {
+                font-size: 1.1rem;
+                line-height: 1.7;
+            }
+
+            .feature-item p, .product-description {
+                font-size: 1rem;
+                line-height: 1.6;
+            }
+        }
+
+        /* Very small screens */
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 2.2rem;
+                line-height: 1.1;
+            }
+
+            .scientist-content h2, 
+            .carousel-header h2, 
+            .contact-content h2 {
+                font-size: 1.8rem;
+                line-height: 1.2;
+            }
+
+            .feature-item h3, .product-title {
+                font-size: 1.1rem;
+            }
+
+            .contact-box {
+                padding: 30px 20px;
+            }
+
+            .feature-content, .product-info {
+                padding: 25px 15px;
             }
         }
     </style>
 </head>
 <body>
     <!-- Navigation -->
-    <nav class="navbar" id="navbar">
-        <div class="nav-container">
-            <a href="home.html" class="logo">flour department</a>
-            
-            <ul class="nav-links" id="nav-links">
-                <li><a href="home.html">home</a></li>
-                <li><a href="recipe.html">recipe</a></li>
-                <li><a href="home.html#contact">contact</a></li>
-            </ul>
-            
-            <div class="mobile-menu-toggle" id="mobile-toggle">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </div>
+    <nav class="navbar">
+        <a href="#" class="nav-logo">FLOUR DEPARTMENT</a>
+        <ul class="nav-links">
+            <li><a href="#products">Products</a></li>
+            <li><a href="#science">Science</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <a href="#products" class="nav-cta">Explore the Kits</a>
+        <button class="burger-menu" id="burgerMenu">
+            <div class="burger-line"></div>
+            <div class="burger-line"></div>
+            <div class="burger-line"></div>
+        </button>
     </nav>
 
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <button class="close-menu" id="closeMenu">&times;</button>
+        <ul>
+            <li><a href="#products">Products</a></li>
+            <li><a href="#science">Science</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <a href="#products" class="nav-cta">Explore the Kits</a>
+    </div>
+
     <!-- Hero Section -->
-    <section class="hero" id="home">
-        <div class="hero-container">
-            <div class="hero-content">
-                <h1 class="hero-title typewriter" id="typewriter-text"></h1>
-                <p class="hero-subtitle">premium sourdough starter kits and equipment, completely free from microplastic contamination</p>
+    <section class="hero stars-bg">
+        <div class="hero-overlay"></div>
+        <video autoplay muted loop playsinline class="hero-video">
+            <source src="Flour Department.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="hero-content">
+            <h1>Flour Department</h1>
+            <p>Activate your starter. Begin your mission. Discover baking that feels like science.</p>
+            <a href="#products" class="hero-cta">Start Your Mission</a>
+        </div>
+    </section>
+
+    <!-- Product Carousel Section -->
+    <section class="product-carousel-section" id="products">
+        <div class="carousel-container">
+            <div class="carousel-header">
+                <h2>Sourdough That's Out of This World</h2>
+                <p>Experience interstellar fermentation with our scientifically crafted mission kits that deliver results beyond your wildest bread dreams.</p>
+            </div>
+            
+            <div class="carousel-wrapper">
+                <!-- Navigation Arrows -->
+                <button class="carousel-nav prev" id="prevBtn">&#8249;</button>
+                <button class="carousel-nav next" id="nextBtn">&#8250;</button>
+                
+                <div class="carousel-track-container">
+                    <div class="carousel-track" id="carouselTrack">
+                        <!-- Starter Probe Kit -->
+                        <div class="product-card">
+                            <div class="product-image-container">
+                                <img src="images/BOX PIZZA.png" alt="Starter Probe Kit" class="product-image default-image">
+                                <img src="pizzan.png" alt="Starter Probe Kit Active" class="product-image hover-image">
+                            </div>
+                            <div class="product-info">
+                                <h3 class="product-title">SOURDOUGH PIZZA DOUGH BAKING KIT</h3>
+                                <p class="product-description">Everything you need to make delicious sourdough pizza crust.</p>
+                                <a href="sourdoughloaf.html" class="product-cta">Check it Out</a>
+                            </div>
+                        </div>
+
+                        <!-- Lunar Roll Lab -->
+                        <div class="product-card">
+                            <div class="product-image-container">
+                                <img src="images/BOXCINNAMON.png" alt="Lunar Roll Lab" class="product-image default-image">
+                                <img src="cinabunyum.png" alt="Lunar Roll Lab Process" class="product-image hover-image">
+                            </div>
+                            <div class="product-info">
+                                <h3 class="product-title">SOURDOUGH CINNAMON ROLL BAKING KIT</h3>
+                                <p class="product-description">Mouth-watering cinnamon rolls in one easy to make package.</p>
+                                <a href="sourdoughloaf.html" class="product-cta">Check it Out</a>
+                            </div>
+                        </div>
+
+                        <!-- Crumbonaut Kit -->
+                        <div class="product-card">
+                            <div class="product-image-container">
+                                <img src="images/BOXSOURDOUGHLOAF.png" alt="Crumbonaut Kit" class="product-image default-image">
+                                <img src="Sourdoughloaf.png" alt="Crumbonaut Kit Results" class="product-image hover-image">
+                            </div>
+                            <div class="product-info">
+                                <h3 class="product-title">CLASSIC SOURDOUGH LOAF BAKING KIT</h3>
+                                <p class="product-description">It's a classic for a reason. Bake a perfect sourdough loaf with this amazing kit.</p>
+                                <a href="sourdoughloaf.html" class="product-cta">Check it Out</a>
+                            </div>
+                        </div>
+
+                        <!-- Future Product Slot -->
+                        <div class="product-card">
+                            <div class="product-image-container">
+                                <img src="images/BOXPRETZEL.png" alt="Coming Soon" class="product-image default-image">
+                                <img src="images/sourdoughpretzelyum.png" alt="Coming Soon" class="product-image hover-image">
+                            </div>
+                            <div class="product-info">
+                                <h3 class="product-title">SOURDOUGH PRETZEL BAKING KIT</h3>
+                                <p class="product-description">Salty, soft, and delicious. You can never go wrong with a sourdough pretzel. Make them at home with this baking kit!</p>
+                                <a href="sourdoughloaf.html" class="product-cta">Check It Out</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="carousel-dots" id="carouselDots"></div>
             </div>
         </div>
     </section>
 
-    <!-- Product Categories -->
-    <section class="categories" id="products">
-        <div class="categories-container">
-            <div class="category-nav">
-                <button class="category-button active" data-category="starter">starter kits</button>
-                <button class="category-button" data-category="equipment">equipment</button>
+    <!-- Bake Like a Scientist Section -->
+    <section class="scientist-section stars-bg" id="science">
+        <div class="container">
+            <div class="scientist-content">
+                <h2>Bake Like a Scientist</h2>
+                <p>Every Flour Department kit transforms your kitchen into a living laboratory. Watch as science meets culinary art, and witness the magic of fermentation unfold before your eyes. All of the baking kits contain...</p>
             </div>
-
-            <!-- Starter Kits Category -->
-            <div class="category-section active" id="starter">
-                <div class="product-grid">
-                    <div class="product-card">
-                        <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Complete Starter Kit" class="product-image">
-                        <div class="product-info">
-                            <h3 class="product-title">complete starter kit</h3>
-                            <p class="product-description">everything you need to begin your plastic-free sourdough journey</p>
-                            <div class="product-features">
-                                <div class="feature-item">25g dehydrated sourdough culture</div>
-                                <div class="feature-item">16oz mason jar with lid</div>
-                                <div class="feature-item">organic cotton cover cloth</div>
-                                <div class="feature-item">bamboo mixing spoon</div>
-                                <div class="feature-item">complete care guide</div>
-                                <div class="feature-item">recipe collection</div>
-                            </div>
-                            <div class="product-price">$49.99</div>
-                            <button class="buy-button" data-product="starter-kit">order starter kit</button>
-                        </div>
+            
+            <div class="features-grid">
+                <div class="feature-item">
+                    <img src="beaker.png" alt="Laboratory Beaker" class="feature-image">
+                    <div class="feature-content">
+                        <h3>Laboratory-Grade Beaker</h3>
+                        <p>Perfect vessel for your sourdough to rise and develop its complex flavors.</p>
                     </div>
-
-                    <div class="product-card">
-                        <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Culture Refill" class="product-image">
-                        <div class="product-info">
-                            <h3 class="product-title">culture refill</h3>
-                            <p class="product-description">pure dehydrated sourdough culture for existing bakers</p>
-                            <div class="product-features">
-                                <div class="feature-item">25g dehydrated sourdough culture</div>
-                                <div class="feature-item">biodegradable packaging</div>
-                                <div class="feature-item">activation instructions</div>
-                                <div class="feature-item">zero plastic contact</div>
-                                <div class="feature-item">7-day active guarantee</div>
-                            </div>
-                            <div class="product-price">$24.99</div>
-                            <button class="buy-button" data-product="culture-refill">order refill</button>
-                        </div>
+                </div>
+                
+                <div class="feature-item">
+                    <img src="flour.png" alt="Premium Ingredients" class="feature-image">
+                    <div class="feature-content">
+                        <h3>Premium Ingredients</h3>
+                        <p>Carefully selected, high-quality ingredients sourced specifically for your mission.</p>
+                    </div>
+                </div>
+                
+                <div class="feature-item">
+                    <img src="sourdoughstarter.png" alt="Sourdough Starter" class="feature-image">
+                    <div class="feature-content">
+                        <h3>Handmade Dehydrated Starter</h3>
+                        <p>Our signature sourdough starter, lovingly cultivated and dehydrated. Watch as it comes alive in your beaker, growing and bubbling as it awakens from its dormant state.</p>
                     </div>
                 </div>
             </div>
+        </div>
+    </section>
 
-            <!-- Equipment Category -->
-            <div class="category-section" id="equipment">
-                <div class="product-grid">
-                    <div class="product-card">
-                        <img src="https://images.unsplash.com/photo-1571115764595-644a1f56a55c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Dough Scraper" class="product-image">
-                        <div class="product-info">
-                            <h3 class="product-title">bamboo dough scraper</h3>
-                            <p class="product-description">essential tool for dough handling and bench work</p>
-                            <div class="product-features">
-                                <div class="feature-item">sustainable bamboo construction</div>
-                                <div class="feature-item">smooth beveled edge</div>
-                                <div class="feature-item">comfortable grip design</div>
-                                <div class="feature-item">naturally antimicrobial</div>
-                                <div class="feature-item">plastic-free alternative</div>
-                            </div>
-                            <div class="product-price">$18.99</div>
-                            <button class="buy-button" data-product="dough-scraper">order scraper</button>
-                        </div>
+    <!-- Contact Section -->
+    <section class="contact-section stars-bg" id="contact">
+        <div class="container">
+            <div class="contact-content">
+                <h2>Contact Mission Control</h2>
+                <p>Ready to begin your baking expedition? Have questions about our kits? Reach out to our mission specialists.</p>
+            </div>
+            
+            <div class="contact-grid">
+                <div class="contact-box">
+                    <h3>Contact Us</h3>
+                    <div class="contact-info">
+                        <h4>Email</h4>
+                        <p>rideforall@gmail.com</p>
                     </div>
-
-                    <div class="product-card">
-                        <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ca4b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Dutch Oven" class="product-image">
-                        <div class="product-info">
-                            <h3 class="product-title">cast iron dutch oven</h3>
-                            <p class="product-description">professional-grade vessel for perfect sourdough baking</p>
-                            <div class="product-features">
-                                <div class="feature-item">5.5 quart capacity</div>
-                                <div class="feature-item">pre-seasoned cast iron</div>
-                                <div class="feature-item">dual-function lid</div>
-                                <div class="feature-item">oven safe to 500°F</div>
-                                <div class="feature-item">lifetime durability</div>
-                            </div>
-                            <div class="product-price">$89.99</div>
-                            <button class="buy-button" data-product="dutch-oven">order dutch oven</button>
-                        </div>
+                    <div class="contact-info">
+                        <h4>Phone</h4>
+                        <p>(540)642-8215</p>
                     </div>
-
-                    <div class="product-card">
-                        <img src="https://images.unsplash.com/photo-1574790398831-760d44bb7fd8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Proofing Basket" class="product-image">
-                        <div class="product-info">
-                            <h3 class="product-title">rattan proofing basket</h3>
-                            <p class="product-description">traditional banneton for perfect dough shaping and texture</p>
-                            <div class="product-features">
-                                <div class="feature-item">natural rattan construction</div>
-                                <div class="feature-item">9 inch round design</div>
-                                <div class="feature-item">includes linen liner</div>
-                                <div class="feature-item">creates beautiful spiral pattern</div>
-                                <div class="feature-item">moisture-wicking properties</div>
-                            </div>
-                            <div class="product-price">$32.99</div>
-                            <button class="buy-button" data-product="proofing-basket">order basket</button>
-                        </div>
+                    <div class="contact-info">
+                        <h4>Mission Hours</h4>
+                        <p>Monday - Friday: 9:00 AM - 6:00 PM EST<br>
+                        Weekend Support: 10:00 AM - 4:00 PM EST</p>
                     </div>
-
-                    <div class="product-card">
-                        <img src="https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Bread Lame" class="product-image">
-                        <div class="product-info">
-                            <h3 class="product-title">brass bread lame</h3>
-                            <p class="product-description">precision scoring tool for professional bread decoration</p>
-                            <div class="product-features">
-                                <div class="feature-item">solid brass handle</div>
-                                <div class="feature-item">replaceable razor blades</div>
-                                <div class="feature-item">ergonomic curved design</div>
-                                <div class="feature-item">includes 5 blades</div>
-                                <div class="feature-item">artisan-quality finish</div>
-                            </div>
-                            <div class="product-price">$24.99</div>
-                            <button class="buy-button" data-product="bread-lame">order lame</button>
-                        </div>
+                    <div class="contact-info">
+                        <h4>Response Time</h4>
+                        <p>Mission Control responds within 24 hours</p>
                     </div>
-
-                    <div class="product-card">
-                        <img src="https://images.unsplash.com/photo-1571115764595-644a1f56a55c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Kitchen Scale" class="product-image">
-                        <div class="product-info">
-                            <h3 class="product-title">bamboo kitchen scale</h3>
-                            <p class="product-description">precision weighing with sustainable materials</p>
-                            <div class="product-features">
-                                <div class="feature-item">bamboo platform surface</div>
-                                <div class="feature-item">digital precision to 1g</div>
-                                <div class="feature-item">11lb capacity</div>
-                                <div class="feature-item">tare function</div>
-                                <div class="feature-item">low battery indicator</div>
-                            </div>
-                            <div class="product-price">$45.99</div>
-                            <button class="buy-button" data-product="kitchen-scale">order scale</button>
-                        </div>
-                    </div>
-
-                    <div class="product-card">
-                        <img src="https://images.unsplash.com/photo-1574790398831-760d44bb7fd8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Mixing Bowls" class="product-image">
-                        <div class="product-info">
-                            <h3 class="product-title">ceramic mixing bowl set</h3>
-                            <p class="product-description">three-piece nesting bowl set for all mixing needs</p>
-                            <div class="product-features">
-                                <div class="feature-item">food-safe ceramic glaze</div>
-                                <div class="feature-item">3 sizes: 1qt, 2qt, 3qt</div>
-                                <div class="feature-item">nesting design saves space</div>
-                                <div class="feature-item">wide pouring spouts</div>
-                                <div class="feature-item">dishwasher safe</div>
-                            </div>
-                            <div class="product-price">$38.99</div>
-                            <button class="buy-button" data-product="mixing-bowls">order bowl set</button>
-                        </div>
+                </div>
+                
+                <div class="contact-box">
+                    <h3>Follow Our Mission</h3>
+                    <div class="social-links">
+                        <a href="#" class="social-link">Instagram @flourdepartment</a>
+                        <a href="#" class="social-link">Facebook Page</a>
                     </div>
                 </div>
             </div>
@@ -650,130 +1135,217 @@
     </section>
 
     <!-- Footer -->
-    <footer class="footer">
-        <div class="footer-container">
-            <h3 class="footer-brand">flour department</h3>
-            <p class="footer-description">pioneering plastic-free sourdough culture and equipment for a healthier world. every product represents our commitment to nourish without compromise.</p>
+    <footer class="footer stars-bg">
+        <div class="container">
             <div class="footer-bottom">
-                <p>&copy; 2025 flour department. all rights reserved.</p>
+                <p>&copy; 2025 Flour Department. All missions classified.</p>
             </div>
         </div>
     </footer>
 
     <script>
-        // Typewriter effect for hero title
-        function typewriterEffect() {
-            const text = "plastic-free\nsourdough";
-            const element = document.getElementById('typewriter-text');
-            let i = 0;
-            
-            function type() {
-                if (i < text.length) {
-                    if (text.charAt(i) === '\n') {
-                        element.innerHTML += '<br>';
-                    } else {
-                        const span = document.createElement('span');
-                        span.textContent = text.charAt(i);
-                        span.style.opacity = '0';
-                        span.style.animation = 'fadeIn 0.3s ease-out forwards';
-                        element.appendChild(span);
-                    }
-                    i++;
-                    setTimeout(type, 80);
-                }
-            }
-            
-            // Start typing after a short delay
-            setTimeout(type, 300);
+        // Mobile menu functionality
+        const burgerMenu = document.getElementById('burgerMenu');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const closeMenu = document.getElementById('closeMenu');
+
+        function toggleMobileMenu() {
+            burgerMenu.classList.toggle('active');
+            mobileMenu.classList.toggle('active');
+            document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : 'auto';
         }
 
-        // Initialize typewriter effect when page loads
-        window.addEventListener('load', typewriterEffect);
+        burgerMenu.addEventListener('click', toggleMobileMenu);
+        closeMenu.addEventListener('click', toggleMobileMenu);
 
-        // Mobile menu functionality
-        const mobileToggle = document.getElementById('mobile-toggle');
-        const navLinks = document.getElementById('nav-links');
-
-        mobileToggle.addEventListener('click', function() {
-            navLinks.classList.toggle('mobile-open');
-            
-            // Animate hamburger icon
-            const spans = this.querySelectorAll('span');
-            spans.forEach((span, index) => {
-                if (navLinks.classList.contains('mobile-open')) {
-                    if (index === 0) span.style.transform = 'rotate(45deg) translate(5px, 5px)';
-                    if (index === 1) span.style.opacity = '0';
-                    if (index === 2) span.style.transform = 'rotate(-45deg) translate(7px, -6px)';
-                } else {
-                    span.style.transform = '';
-                    span.style.opacity = '';
-                }
+        // Close mobile menu when clicking on a link
+        const mobileMenuLinks = mobileMenu.querySelectorAll('a');
+        mobileMenuLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                setTimeout(toggleMobileMenu, 300);
             });
         });
 
-        // Close mobile menu when clicking on links
-        navLinks.addEventListener('click', function(e) {
-            if (e.target.tagName === 'A') {
-                navLinks.classList.remove('mobile-open');
-                const spans = mobileToggle.querySelectorAll('span');
-                spans.forEach(span => {
-                    span.style.transform = '';
-                    span.style.opacity = '';
-                });
+        // Close mobile menu when clicking outside
+        mobileMenu.addEventListener('click', (e) => {
+            if (e.target === mobileMenu) {
+                toggleMobileMenu();
             }
         });
 
-        // Category switching
-        const categoryButtons = document.querySelectorAll('.category-button');
-        const categorySections = document.querySelectorAll('.category-section');
-
-        categoryButtons.forEach(button => {
-            button.addEventListener('click', function() {
-                const targetCategory = this.getAttribute('data-category');
-                
-                // Update active button
-                categoryButtons.forEach(btn => btn.classList.remove('active'));
-                this.classList.add('active');
-                
-                // Show target category section
-                categorySections.forEach(section => {
-                    section.classList.remove('active');
-                    if (section.id === targetCategory) {
-                        section.classList.add('active');
-                    }
-                });
-            });
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            const heroHeight = window.innerHeight;
+            
+            if (window.scrollY >= heroHeight - 100) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
         });
 
-        // Buy button functionality - replace with your Stripe URLs
-        const buyButtons = document.querySelectorAll('.buy-button');
-        const stripeUrls = {
-            'starter-kit': 'https://your-stripe-url-for-starter-kit',
-            'culture-refill': 'https://your-stripe-url-for-culture-refill',
-            'dough-scraper': 'https://your-stripe-url-for-dough-scraper',
-            'dutch-oven': 'https://your-stripe-url-for-dutch-oven',
-            'proofing-basket': 'https://your-stripe-url-for-proofing-basket',
-            'bread-lame': 'https://your-stripe-url-for-bread-lame',
-            'kitchen-scale': 'https://your-stripe-url-for-kitchen-scale',
-            'mixing-bowls': 'https://your-stripe-url-for-mixing-bowls'
-        };
-
-        buyButtons.forEach(button => {
-            button.addEventListener('click', function() {
-                const product = this.getAttribute('data-product');
-                const stripeUrl = stripeUrls[product];
-                
-                if (stripeUrl && stripeUrl !== 'https://your-stripe-url-for-' + product) {
-                    // Open Stripe checkout in new tab
-                    window.open(stripeUrl, '_blank');
-                } else {
-                    // Placeholder functionality - replace with your actual Stripe URLs
-                    alert(`Stripe checkout for ${product} - Please replace with actual Stripe URL`);
+        // Product Carousel functionality
+        const carouselTrack = document.getElementById('carouselTrack');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+        const carouselDots = document.getElementById('carouselDots');
+        
+        const cards = document.querySelectorAll('.product-card');
+        const totalCards = cards.length;
+        
+        // Determine cards to show based on screen size
+        let cardsToShow = 1; // Default for mobile
+        
+        function updateCardsToShow() {
+            if (window.innerWidth >= 768) {
+                cardsToShow = 3;
+            } else {
+                cardsToShow = 1;
+            }
+        }
+        
+        updateCardsToShow();
+        
+        const maxIndex = Math.max(0, totalCards - cardsToShow);
+        let currentIndex = 0;
+        
+        // Create dots
+        const numDots = Math.max(1, maxIndex + 1);
+        for (let i = 0; i < numDots; i++) {
+            const dot = document.createElement('div');
+            dot.classList.add('carousel-dot');
+            if (i === 0) dot.classList.add('active');
+            dot.addEventListener('click', () => goToSlide(i));
+            carouselDots.appendChild(dot);
+        }
+        
+        const dots = document.querySelectorAll('.carousel-dot');
+        
+        function updateCarousel() {
+            const translateX = -(currentIndex * (100 / cardsToShow));
+            carouselTrack.style.transform = `translateX(${translateX}%)`;
+            
+            // Update dots
+            dots.forEach((dot, index) => {
+                dot.classList.toggle('active', index === currentIndex);
+            });
+            
+            // Update button states
+            if (prevBtn && nextBtn) {
+                prevBtn.disabled = currentIndex === 0;
+                nextBtn.disabled = currentIndex >= maxIndex;
+            }
+        }
+        
+        function goToSlide(slideIndex) {
+            currentIndex = Math.max(0, Math.min(slideIndex, maxIndex));
+            updateCarousel();
+        }
+        
+        function nextSlide() {
+            if (currentIndex < maxIndex) {
+                currentIndex++;
+                updateCarousel();
+            }
+        }
+        
+        function prevSlide() {
+            if (currentIndex > 0) {
+                currentIndex--;
+                updateCarousel();
+            }
+        }
+        
+        // Event listeners for navigation buttons (desktop only)
+        if (nextBtn) nextBtn.addEventListener('click', nextSlide);
+        if (prevBtn) prevBtn.addEventListener('click', prevSlide);
+        
+        // Touch/swipe functionality for mobile
+        let startX = 0;
+        let endX = 0;
+        let isDragging = false;
+        
+        carouselTrack.addEventListener('touchstart', (e) => {
+            startX = e.touches[0].clientX;
+            isDragging = true;
+        }, { passive: true });
+        
+        carouselTrack.addEventListener('touchmove', (e) => {
+            if (!isDragging) return;
+            endX = e.touches[0].clientX;
+        }, { passive: true });
+        
+        carouselTrack.addEventListener('touchend', () => {
+            if (!isDragging) return;
+            isDragging = false;
+            
+            const threshold = 50;
+            const diff = startX - endX;
+            
+            if (Math.abs(diff) > threshold) {
+                if (diff > 0 && currentIndex < maxIndex) {
+                    nextSlide();
+                } else if (diff < 0 && currentIndex > 0) {
+                    prevSlide();
                 }
-            });
+            }
+        }, { passive: true });
+        
+        // Initialize carousel
+        updateCarousel();
+        
+        // Auto-play carousel (only if we have more cards than visible)
+        let autoPlayInterval;
+        if (totalCards > cardsToShow) {
+            function startAutoPlay() {
+                autoPlayInterval = setInterval(() => {
+                    if (currentIndex >= maxIndex) {
+                        currentIndex = 0;
+                    } else {
+                        currentIndex++;
+                    }
+                    updateCarousel();
+                }, 5000);
+            }
+            
+            function stopAutoPlay() {
+                clearInterval(autoPlayInterval);
+            }
+            
+            startAutoPlay();
+            
+            // Pause auto-play on hover/touch
+            const carouselWrapper = document.querySelector('.carousel-wrapper');
+            carouselWrapper.addEventListener('mouseenter', stopAutoPlay);
+            carouselWrapper.addEventListener('mouseleave', startAutoPlay);
+            carouselWrapper.addEventListener('touchstart', stopAutoPlay);
+        }
+        
+        // Handle window resize
+        window.addEventListener('resize', () => {
+            updateCardsToShow();
+            const newMaxIndex = Math.max(0, totalCards - cardsToShow);
+            
+            if (currentIndex > newMaxIndex) {
+                currentIndex = newMaxIndex;
+            }
+            
+            // Recreate dots if needed
+            carouselDots.innerHTML = '';
+            const newNumDots = Math.max(1, newMaxIndex + 1);
+            for (let i = 0; i < newNumDots; i++) {
+                const dot = document.createElement('div');
+                dot.classList.add('carousel-dot');
+                if (i === currentIndex) dot.classList.add('active');
+                dot.addEventListener('click', () => goToSlide(i));
+                carouselDots.appendChild(dot);
+            }
+            
+            updateCarousel();
         });
 
-        // Smooth scrolling for anchor links
+        // Smooth scrolling for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -787,17 +1359,30 @@
             });
         });
 
-        // Handle window resize for responsive adjustments
-        window.addEventListener('resize', function() {
-            if (window.innerWidth > 768) {
-                navLinks.classList.remove('mobile-open');
-                const spans = mobileToggle.querySelectorAll('span');
-                spans.forEach(span => {
-                    span.style.transform = '';
-                    span.style.opacity = '';
-                });
-            }
+        // Intersection Observer for animations (optional enhancement)
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe elements for animation
+        const animateElements = document.querySelectorAll('.feature-item, .product-card, .contact-box');
+        animateElements.forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(el);
         });
     </script>
 </body>
 </html>
+            
