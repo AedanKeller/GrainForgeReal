@@ -852,7 +852,20 @@
             }
 
             .carousel-nav {
-                display: none !important;
+                display: flex !important;
+                width: 40px;
+                height: 40px;
+                font-size: 14px;
+                background: rgba(255, 255, 255, 0.95);
+                border: 1px solid #000000;
+            }
+
+            .carousel-nav.prev {
+                left: 5px;
+            }
+
+            .carousel-nav.next {
+                right: 5px;
             }
 
             .hero {
@@ -1311,7 +1324,7 @@
             if (!isDragging) return;
             isDragging = false;
             
-            const threshold = 50;
+            const threshold = 30; // Reduced threshold for easier swiping
             const diff = startX - endX;
             
             if (Math.abs(diff) > threshold) {
@@ -1322,6 +1335,49 @@
                 }
             }
         }, { passive: true });
+        
+        // Enhanced mouse drag support for desktop
+        let mouseStartX = 0;
+        let mouseEndX = 0;
+        let isMouseDragging = false;
+        
+        carouselTrack.addEventListener('mousedown', (e) => {
+            mouseStartX = e.clientX;
+            isMouseDragging = true;
+            carouselTrack.style.cursor = 'grabbing';
+        });
+        
+        carouselTrack.addEventListener('mousemove', (e) => {
+            if (!isMouseDragging) return;
+            mouseEndX = e.clientX;
+        });
+        
+        carouselTrack.addEventListener('mouseup', () => {
+            if (!isMouseDragging) return;
+            isMouseDragging = false;
+            carouselTrack.style.cursor = 'grab';
+            
+            const threshold = 50;
+            const diff = mouseStartX - mouseEndX;
+            
+            if (Math.abs(diff) > threshold) {
+                if (diff > 0 && currentIndex < maxIndex) {
+                    nextSlide();
+                } else if (diff < 0 && currentIndex > 0) {
+                    prevSlide();
+                }
+            }
+        });
+        
+        carouselTrack.addEventListener('mouseleave', () => {
+            if (isMouseDragging) {
+                isMouseDragging = false;
+                carouselTrack.style.cursor = 'grab';
+            }
+        });
+        
+        // Set initial cursor
+        carouselTrack.style.cursor = 'grab';
         
         // Initialize carousel
         updateCarousel();
