@@ -300,11 +300,13 @@
 
         .hero-video {
             position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
+            top: 50%;
+            left: 50%;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            transform: translate(-50%, -50%);
             z-index: -1;
         }
 
@@ -785,8 +787,8 @@
             }
 
             .product-card {
-                flex: 0 0 calc(33.333% - 15px);
-                width: calc(33.333% - 15px);
+                flex: 0 0 calc(33.333% - 13.33px);
+                width: calc(33.333% - 13.33px);
             }
 
             .product-image-container {
@@ -861,6 +863,13 @@
                 padding: 0 15px;
             }
 
+            .hero-video {
+                /* Better mobile video scaling */
+                transform: translate(-50%, -50%) scale(1.1);
+                min-width: 110%;
+                min-height: 110%;
+            }
+
             .scientist-content, .carousel-header, .contact-content {
                 padding: 0 15px;
             }
@@ -871,6 +880,21 @@
 
             .carousel-container {
                 padding: 0 15px;
+            }
+
+            .carousel-track-container {
+                margin: 0;
+            }
+
+            .carousel-track {
+                padding: 0;
+                gap: 0;
+            }
+
+            .product-card {
+                flex: 0 0 100%;
+                width: 100%;
+                margin: 0;
             }
 
             .nav-logo {
@@ -918,6 +942,13 @@
             .hero h1 {
                 font-size: 2.2rem;
                 line-height: 1.1;
+            }
+
+            .hero-video {
+                /* Even better scaling for very small screens */
+                transform: translate(-50%, -50%) scale(1.2);
+                min-width: 120%;
+                min-height: 120%;
             }
 
             .scientist-content h2, 
